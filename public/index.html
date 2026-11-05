@@ -12,6 +12,7 @@
 <meta property="og:description" content="Brand partnerships, media sales, and creator marketing. Miami to global.">
 <meta property="og:image" content="https://moustaphakallias.com/assets/img/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
+<script>document.documentElement.classList.add("js")</script>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preload" as="image" href="assets/img/odysseus-2400.webp" imagesrcset="assets/img/odysseus-1280.webp 1280w, assets/img/odysseus-2400.webp 2400w" imagesizes="100vw">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -82,7 +83,7 @@ a{color:inherit}
 .wrap{max-width:calc(var(--max) + 2*var(--pad));margin:0 auto;padding:0 var(--pad)}
 .eyebrow{display:inline-flex;align-items:center;gap:14px;font:500 12px/1.4 var(--f-caps);letter-spacing:.24em;text-transform:uppercase;color:var(--gold-hi)}
 .eyebrow::before{content:"";width:42px;height:1px;background:var(--gold)}
-.btn{display:inline-flex;align-items:center;gap:10px;font:600 12px/1 var(--f-caps);letter-spacing:.18em;text-transform:uppercase;text-decoration:none;padding:16px 24px;border-radius:2px;cursor:pointer;transition:transform .25s var(--ease),background .25s,color .25s,border-color .25s,box-shadow .25s;border:1px solid transparent;background:none;color:inherit}
+.btn{display:inline-flex;align-items:center;gap:10px;font:600 12px/1 var(--f-caps);letter-spacing:.18em;text-transform:uppercase;text-decoration:none;padding:16px 24px;border-radius:2px;cursor:pointer;transition:transform .25s var(--ease),translate .35s var(--ease),background .25s,color .25s,border-color .25s,box-shadow .25s;border:1px solid transparent;background:none;color:inherit}
 .btn:hover{transform:translateY(-2px)}
 .btn-blood{background:var(--crimson);color:var(--parch);border-color:rgba(239,205,120,.45);box-shadow:0 10px 30px -12px rgba(163,22,31,.8)}
 .btn-blood:hover{background:var(--crimson-hi)}
@@ -150,7 +151,7 @@ strong{color:var(--gold-hi);font-weight:600}
 /* ---------- stats ---------- */
 .stats{padding:clamp(56px,8vw,90px) 0 0}
 .stat-row{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--gold-line);border-bottom:1px solid var(--gold-line)}
-.stat{padding:34px 20px;text-align:center;position:relative}
+.stat{text-align:center;position:relative;perspective:900px;cursor:pointer;outline-offset:-6px}
 .stat+.stat::before{content:"";position:absolute;left:0;top:24%;bottom:24%;width:1px;background:var(--gold-line)}
 .stat .num{font:500 clamp(46px,6vw,76px)/1 var(--f-display);color:var(--parch)}
 .stat .num sup{font-size:.42em;color:var(--gold);vertical-align:.95em;margin-left:2px}
@@ -165,7 +166,7 @@ strong{color:var(--gold-hi);font-weight:600}
 .tablet+.tablet{margin-top:20px}
 .tablet h3{margin:0 0 18px;font:600 12px/1 var(--f-caps);letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
 .langs{list-style:none;margin:0;padding:0}
-.langs li{display:flex;justify-content:space-between;align-items:baseline;padding:12px 0;border-bottom:1px dashed rgba(212,168,69,.2)}
+.langs li{border-bottom:1px dashed rgba(212,168,69,.2)}
 .langs li:last-child{border-bottom:0}
 .langs b{font:500 22px/1 var(--f-display);color:var(--parch)}
 .langs span{font:500 10px/1 var(--f-caps);letter-spacing:.2em;text-transform:uppercase;color:var(--mist)}
@@ -178,9 +179,9 @@ strong{color:var(--gold-hi);font-weight:600}
 .timeline::before{content:"";position:absolute;left:15px;top:8px;bottom:8px;width:1px;background:linear-gradient(var(--gold),rgba(212,168,69,.15) 85%,transparent)}
 .job{position:relative;margin-bottom:28px}
 .job::before{content:"";position:absolute;left:-49px;top:30px;width:13px;height:13px;transform:rotate(45deg);background:var(--ink);border:1px solid var(--gold);box-shadow:0 0 0 5px var(--ink)}
-.job:first-child::before{background:var(--crimson);border-color:var(--gold-hi)}
+.job:first-of-type::before{background:var(--crimson);border-color:var(--gold-hi)}
 .job-card{background:var(--card);border:1px solid rgba(212,168,69,.2);border-radius:3px;padding:clamp(22px,3vw,34px);transition:border-color .35s,transform .35s var(--ease),background .35s}
-.job-card:hover{border-color:var(--gold-line);transform:translateX(4px);background:rgba(17,30,51,.85)}
+.job-card:hover{border-color:var(--gold-line);background:rgba(17,30,51,.85)}
 .job-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 20px;align-items:baseline}
 .job h3{margin:0;font:500 clamp(25px,2.5vw,32px)/1.15 var(--f-display);color:var(--parch)}
 .when{font:600 11px/1 var(--f-caps);letter-spacing:.18em;text-transform:uppercase;color:var(--gold);white-space:nowrap}
@@ -203,14 +204,20 @@ strong{color:var(--gold-hi);font-weight:600}
 .cert::before{content:"";flex:none;width:9px;height:9px;margin-top:8px;transform:rotate(45deg);border:1px solid var(--gold)}
 
 /* ---------- contact ---------- */
-.contact{position:relative;min-height:min(100svh,880px);display:flex;align-items:center;overflow:hidden;isolation:isolate;padding:120px 0}
-.contact-media{position:absolute;inset:0;z-index:-2}
-.contact-media img{width:100%;height:118%;object-fit:cover;object-position:80% 55%;will-change:transform}
-.contact::before{content:"";position:absolute;inset:0;z-index:-1;background:
-  linear-gradient(180deg,var(--ink) 0%,rgba(10,18,32,0) 18%,rgba(10,18,32,0) 80%,var(--ink) 100%),
-  linear-gradient(90deg,rgba(10,18,32,.15) 0%,rgba(10,18,32,0) 45%,rgba(10,18,32,.55) 70%,rgba(10,18,32,.8) 100%)}
-.contact .wrap{width:100%;display:flex;justify-content:flex-end}
-.contact-panel{width:min(540px,44vw);background:rgba(10,18,32,.8);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--gold-line);border-radius:3px;padding:clamp(28px,4vw,48px);position:relative}
+.contact{position:relative;overflow:hidden;isolation:isolate;padding:clamp(90px,12vw,150px) 0;background:
+  radial-gradient(900px 560px at 24% 50%,rgba(43,156,177,.14),transparent 65%),
+  radial-gradient(700px 500px at 88% 75%,rgba(163,22,31,.10),transparent 65%),
+  linear-gradient(180deg,var(--ink),var(--night) 50%,var(--ink))}
+.contact-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,540px);gap:clamp(32px,6vw,90px);align-items:center}
+.compass-wrap{display:flex;flex-direction:column;align-items:center}
+.compass{width:min(100%,440px);height:auto;overflow:visible;color:var(--gold)}
+.compass .spin{transform-origin:0 0;animation:spin 140s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.compass text{font-family:var(--f-caps);fill:var(--gold-hi)}
+.compass .ring-text{font-size:10.5px;letter-spacing:.3em;fill:var(--parch-dim)}
+.compass .card{font-size:17px;font-weight:600;text-anchor:middle;dominant-baseline:central}
+.compass-hint{margin:14px 0 0;font:500 10px/1 var(--f-caps);letter-spacing:.24em;text-transform:uppercase;color:var(--mist)}
+.contact-panel{width:100%;background:rgba(10,18,32,.8);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--gold-line);border-radius:3px;padding:clamp(28px,4vw,48px);position:relative}
 .contact-panel::before{content:"";position:absolute;inset:6px;border:1px solid rgba(212,168,69,.13);pointer-events:none}
 .contact h2{margin:18px 0 18px;font:500 clamp(40px,5vw,64px)/1 var(--f-display);color:var(--parch)}
 .contact h2 em{color:var(--gold-hi)}
@@ -220,6 +227,46 @@ strong{color:var(--gold-hi);font-weight:600}
 .details a,.details span{display:flex;align-items:center;gap:12px;color:var(--fog);text-decoration:none}
 .details a:hover{color:var(--gold-hi)}
 .details svg{width:15px;height:15px;color:var(--gold);flex:none}
+
+/* ---------- motion & interaction ---------- */
+.progress{position:fixed;top:0;left:0;right:0;height:2px;z-index:70;background:linear-gradient(90deg,var(--crimson-hi),var(--gold-hi));transform-origin:0 50%;transform:scaleX(var(--sp,0));pointer-events:none}
+.atmos{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+.torch{position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:0;transition:opacity .6s;mix-blend-mode:screen;background:radial-gradient(460px circle at var(--mx,50%) var(--my,50%),rgba(239,205,120,.16),rgba(239,205,120,.05) 40%,transparent 70%)}
+.hero.lit .torch{opacity:1}
+.js .hero-media{animation:dawn 2.6s var(--ease) backwards}
+@keyframes dawn{from{opacity:0;transform:scale(1.1)}}
+.js .intro{animation:rise 1.1s var(--ease) backwards;animation-delay:var(--d,0s)}
+.js .intro-fade{animation:fade 1.2s ease backwards;animation-delay:var(--d,0s)}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}}
+@keyframes fade{from{opacity:0}}
+.js .hero h1:not(.ready){visibility:hidden}
+.ch{display:inline-block;animation:letter 1.2s var(--ease) backwards;animation-delay:calc(.4s + var(--i) * .065s)}
+@keyframes letter{from{opacity:0;transform:translateY(.5em) rotate(6deg);filter:blur(8px)}}
+.js .hero h1 em{padding-right:.12em;padding-bottom:.08em;background:linear-gradient(100deg,var(--gold-hi) 0 40%,#fff6dc 50%,var(--gold-hi) 60% 100%);background-size:280% 100%;background-position:0 0;-webkit-background-clip:text;background-clip:text;color:transparent;animation:wipe 1.4s var(--ease) 1.05s backwards,sheen 2.8s ease-in-out 2.5s backwards}
+@keyframes wipe{from{clip-path:inset(0 100% 0 0)}}
+@keyframes sheen{from{background-position:100% 0}}
+[data-tilt]{transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .6s var(--ease),border-color .35s,background .35s;position:relative;overflow:hidden}
+[data-tilt].tilting{transition:transform .1s linear,border-color .35s,background .35s}
+[data-tilt]::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .4s;background:radial-gradient(360px circle at var(--sx,50%) var(--sy,50%),rgba(239,205,120,.11),transparent 60%)}
+[data-tilt]:hover::after{opacity:1}
+.tl-fill{position:absolute;left:15px;top:8px;width:1px;height:calc(var(--p,0) * (100% - 16px));background:var(--gold-hi);box-shadow:0 0 10px rgba(239,205,120,.8);pointer-events:none}
+.job.lit::before{background:var(--gold);box-shadow:0 0 0 5px var(--ink),0 0 18px rgba(239,205,120,.55);transition:background .4s,box-shadow .4s}
+.job:first-of-type.lit::before{background:var(--crimson-hi)}
+.stat-in{display:grid;transform-style:preserve-3d;transition:transform .8s var(--ease)}
+@media (hover:hover){.stat:hover .stat-in{transform:rotateY(180deg)}}
+.stat.flip .stat-in{transform:rotateY(180deg)}
+.face{grid-area:1/1;padding:34px 20px;-webkit-backface-visibility:hidden;backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.face.back{transform:rotateY(180deg);font:500 clamp(19px,1.8vw,23px)/1.3 var(--f-display);color:var(--gold-hi);text-wrap:balance}
+.stat-hint{margin:16px 0 0;text-align:center;font:500 10px/1 var(--f-caps);letter-spacing:.24em;text-transform:uppercase;color:var(--mist)}
+.hint{margin:-6px 0 8px;font-size:12.5px;color:var(--mist)}
+.lang-row{all:unset;box-sizing:border-box;width:100%;display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:12px 8px;cursor:pointer;border-radius:2px;transition:background .25s}
+.lang-row:hover{background:rgba(212,168,69,.07)}
+.lang-row:focus-visible{outline:2px solid var(--gold-hi);outline-offset:0}
+.lang-row[aria-pressed="true"] b{color:var(--gold-hi)}
+.lang-row[aria-pressed="true"] span{color:var(--gold)}
+.lang-row[aria-pressed="true"] span::before{content:"\25C6  ";font-size:8px}
+footer a{text-decoration:none;transition:color .25s}
+footer a:hover{color:var(--gold-hi)}
 
 /* ---------- footer ---------- */
 footer{padding:34px 0 44px;border-top:1px solid var(--gold-line);font:500 11px/1.6 var(--f-caps);letter-spacing:.18em;text-transform:uppercase;color:var(--mist)}
@@ -252,13 +299,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
   .stat-row{grid-template-columns:1fr 1fr}
   .stat:nth-child(3)::before{display:none}
   .stat:nth-child(n+3){border-top:1px solid var(--gold-line)}
-  .contact{display:block;padding:0 0 70px;min-height:0}
-  .contact-media{position:relative;height:100vw;max-height:560px}
-  .contact-media img{height:100%;object-position:46% 58%}
-  .contact::before{background:linear-gradient(180deg,var(--ink) 0%,rgba(10,18,32,0) 14%)}
-  .contact-media::after{content:"";position:absolute;inset:auto 0 0 0;height:40%;background:linear-gradient(transparent,var(--ink))}
-  .contact .wrap{display:block;margin-top:-64px}
-  .contact-panel{width:100%}
+  .contact-grid{grid-template-columns:1fr}
+  .compass{width:min(72vw,300px)}
 }
 @media (min-width:821px){.m-lang{display:none}}
 @media (max-width:640px){
@@ -273,6 +315,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
   .timeline{padding-left:34px}
   .timeline::before{left:6px}
   .job::before{left:-34px}
+  .tl-fill{left:6px}
   .sec-head{gap:14px}
   .sec-head .rule{display:none}
   .btn{padding:15px 20px}
@@ -287,7 +330,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
   @page{margin:8mm 11mm}
   body{background:#fff!important;color:#111;font-size:9pt;line-height:1.32}
   .print-contact{display:flex!important;flex-wrap:wrap;gap:4pt 14pt;font:400 9pt/1.3 var(--f-body);margin:2pt 0 0}
-  body::after,.contact,.nav,.hero-media,.hero::before,.scroll-cue,.ledger,.marquee,.stats,.contact-media,.contact::before,.to-top,.toast,.ctas,.meander,.tags,.numeral,.rule,footer{display:none!important}
+  body::after,.contact,.nav,.progress,.atmos,.torch,.stat-hint,.hint,.hero-media,.hero::before,.scroll-cue,.ledger,.marquee,.stats,.contact-media,.contact::before,.to-top,.toast,.ctas,.meander,.tags,.numeral,.rule,footer{display:none!important}
   .js .rv{opacity:1!important;transform:none!important}
   *{color:#111!important;background:none!important;box-shadow:none!important;border-color:#bbb!important;backdrop-filter:none!important}
   .hero{min-height:0;display:block}
@@ -306,7 +349,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
   .edu p{font-size:9pt;margin:2pt 0 0}.gpa{margin-top:3pt;padding:0}
   .stats{display:none!important}
   .tablet+.tablet{margin-top:4pt}
-  .langs li{padding:1pt 0}.langs b,.edu b{font-size:12pt}
+  .langs li{padding:0}.lang-row{padding:1pt 0}.langs b,.edu b{font-size:12pt}
   .timeline{padding:0}.timeline::before,.job::before{display:none}
   .job{margin-bottom:4pt;break-inside:avoid}
   .job-card{padding:0;border:0}
@@ -327,6 +370,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
+<div class="progress" aria-hidden="true"></div>
 
 <header class="nav" id="nav">
   <div class="nav-in">
@@ -351,18 +395,20 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
   <div class="hero-media" aria-hidden="true">
     <img src="assets/img/odysseus-2400.webp" srcset="assets/img/odysseus-1280.webp 1280w, assets/img/odysseus-2400.webp 2400w" sizes="100vw" alt="" fetchpriority="high" data-parallax=".12">
   </div>
+  <div class="torch" aria-hidden="true"></div>
+  <canvas class="atmos" id="heroFx" aria-hidden="true"></canvas>
   <div class="hero-in">
     <div class="hero-copy">
-      <span class="eyebrow" data-i18n="hero.eyebrow">Sales &amp; Client Experience · Miami, FL</span>
+      <span class="eyebrow intro" style="--d:.15s" data-i18n="hero.eyebrow">Sales &amp; Client Experience · Miami, FL</span>
       <h1>Moustapha <em>Kallias</em></h1>
-      <p class="print-contact" hidden><span>Miami, FL</span><span>(804) 912-4663</span><span>moustapha.jk01@gmail.com</span><span>linkedin.com/in/moustapha-kallias-515308341</span><span>moustaphakallias.com</span></p>
-      <p class="lede" data-i18n="hero.lede">I turn attention into revenue: building audiences, closing accounts, and shaping how brands travel across cultures.</p>
-      <div class="ctas">
+      <p class="print-contact" hidden><span>Miami, FL</span><span>(804) 912-4663</span><span>moustapha.jk01@gmail.com</span><span>linkedin.com/in/moustapha-kallias-515308341</span><span>github.com/9mk8</span><span>moustaphakallias.com</span></p>
+      <p class="lede intro" style="--d:1.35s" data-i18n="hero.lede">I turn attention into revenue: building audiences, closing accounts, and shaping how brands travel across cultures.</p>
+      <div class="ctas intro" style="--d:1.55s">
         <a class="btn btn-blood" href="#contact" data-i18n="hero.cta">Get in touch</a>
         <button class="btn btn-gold" type="button" id="cv"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 2v9M4 7l4 4 4-4M2 14h12"/></svg><span data-i18n="hero.cv">Download résumé (PDF)</span></button>
       </div>
     </div>
-    <aside class="ledger" aria-label="Creator analytics">
+    <aside class="ledger intro" style="--d:1.9s" aria-label="Creator analytics">
       <div class="ledger-top"><span data-i18n="ledger.title">Analytics · 30 days</span><span class="live" data-i18n="ledger.live">Live</span></div>
       <div class="who"><span class="avatar" aria-hidden="true">MK</span><div><b>Moustapha K.</b><small>@moustapha · creator</small></div></div>
       <div class="slides">
@@ -373,7 +419,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
       <div class="dots" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
     </aside>
   </div>
-  <a class="scroll-cue" href="#profile" aria-hidden="true" tabindex="-1"><span data-i18n="hero.scroll">Scroll</span><i></i></a>
+  <a class="scroll-cue intro-fade" style="--d:2.4s" href="#profile" aria-hidden="true" tabindex="-1"><span data-i18n="hero.scroll">Scroll</span><i></i></a>
 </section>
 
 <div class="marquee" aria-hidden="true"><div class="track">
@@ -384,11 +430,12 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 <section class="stats" aria-label="Highlights">
   <div class="wrap">
     <div class="stat-row rv">
-      <div class="stat"><div class="num" data-count="3.9" data-dec="1">3.9<sup>M+</sup></div><div class="cap" data-i18n="s1l">Cumulative views</div></div>
-      <div class="stat"><div class="num" data-count="23" data-dec="0">23<sup>K+</sup></div><div class="cap" data-i18n="st.followers">Engaged followers</div></div>
-      <div class="stat"><div class="num" data-count="3" data-dec="0">3</div><div class="cap" data-i18n="st.langs">Languages, fluent</div></div>
-      <div class="stat"><div class="num" data-count="4.0" data-dec="1">4.0</div><div class="cap" data-i18n="st.gpa">GPA at FIU</div></div>
+      <div class="stat" tabindex="0"><div class="stat-in"><div class="face"><div class="num" data-count="3.9" data-dec="1">3.9<sup>M+</sup></div><div class="cap" data-i18n="s1l">Cumulative views</div></div><div class="face back" data-i18n="sb1">Across TikTok and Instagram</div></div></div>
+      <div class="stat" tabindex="0"><div class="stat-in"><div class="face"><div class="num" data-count="23" data-dec="0">23<sup>K+</sup></div><div class="cap" data-i18n="st.followers">Engaged followers</div></div><div class="face back" data-i18n="sb2">Across two owned channels</div></div></div>
+      <div class="stat" tabindex="0"><div class="stat-in"><div class="face"><div class="num" data-count="3" data-dec="0">3</div><div class="cap" data-i18n="st.langs">Languages, fluent</div></div><div class="face back" data-i18n="sb3">English, Spanish and French</div></div></div>
+      <div class="stat" tabindex="0"><div class="stat-in"><div class="face"><div class="num" data-count="4.0" data-dec="1">4.0</div><div class="cap" data-i18n="st.gpa">GPA at FIU</div></div><div class="face back">Florida International University</div></div></div>
     </div>
+    <p class="stat-hint" data-i18n="st.hint">Hover or tap a figure</p>
   </div>
 </section>
 
@@ -402,15 +449,16 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
         <p data-i18n="p3">My International Relations coursework sharpens the part of this work I care about most: how messages move across cultures, and why some brands travel while others don't. I'm looking for roles at the intersection of <strong>brand partnerships, media sales, and creator marketing</strong>, ideally with a global or multi-market dimension.</p>
       </div>
       <div class="rv">
-        <div class="tablet">
+        <div class="tablet" data-tilt>
           <h3 data-i18n="pr.langs">Languages</h3>
+          <p class="hint" data-i18n="pr.hint">Tap a language to read the site in it.</p>
           <ul class="langs">
-            <li><b>English</b><span data-i18n="pr.native">Native</span></li>
-            <li><b>Español</b><span data-i18n="pr.fluent">Fluent</span></li>
-            <li><b>Français</b><span data-i18n="pr.fluent">Fluent</span></li>
+            <li><button type="button" class="lang-row" data-lang="en" aria-pressed="true"><b>English</b><span data-i18n="pr.native">Native</span></button></li>
+            <li><button type="button" class="lang-row" data-lang="es" aria-pressed="false"><b>Español</b><span data-i18n="pr.fluent">Fluent</span></button></li>
+            <li><button type="button" class="lang-row" data-lang="fr" aria-pressed="false"><b>Français</b><span data-i18n="pr.fluent">Fluent</span></button></li>
           </ul>
         </div>
-        <div class="tablet edu">
+        <div class="tablet edu" data-tilt>
           <h3 data-i18n="pr.edu">Education</h3>
           <b>Florida International University</b>
           <p><span data-i18n="pr.degree">B.S. Public Relations, Advertising &amp; Applied Communication</span><br>College of Communication, Architecture + The Arts<br>2025 – <span data-i18n="present">Present</span></p>
@@ -427,25 +475,20 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
   <div class="wrap">
     <div class="sec-head rv"><span class="numeral">II</span><h2 data-i18n="nav.experience">Experience</h2><span class="rule"></span></div>
     <div class="timeline">
-      <article class="job rv"><div class="job-card">
+      <span class="tl-fill" aria-hidden="true"></span>
+      <article class="job rv"><div class="job-card" data-tilt>
         <div class="job-top"><h3 data-i18n="j1.role">Sales Strategy Associate</h3><span class="when">2024 – <span data-i18n="present">Present</span></span></div>
         <p class="org">Meta · Ray-Ban Meta Smart Glasses · Miami, FL</p>
         <ul><li data-i18n="j1.b1">Analyzed sales performance data to identify trends, opportunities, and areas for business growth.</li><li data-i18n="j1.b2">Partnered with sales, marketing, and operations teams to develop strategic initiatives that improved revenue and operational efficiency.</li></ul>
         <div class="tags"><span>SALES ANALYTICS</span><span>STRATEGY</span><span>CROSS-FUNCTIONAL</span></div>
       </div></article>
-      <article class="job rv"><div class="job-card">
+      <article class="job rv"><div class="job-card" data-tilt>
         <div class="job-top"><h3 data-i18n="j2.role">Social Media &amp; Content Strategist</h3><span class="when">2023 – <span data-i18n="present">Present</span></span></div>
         <p class="org" data-i18n="j2.org">Self-managed · Creator business</p>
         <ul><li data-i18n="j2.b1">Lead content strategy across TikTok and Instagram, driving 3.9M+ cumulative views through data-informed editing and trend forecasting.</li><li data-i18n="j2.b2">Grew two owned channels, including a personal account to 22K+ followers, to a combined 23,000+ engaged followers.</li><li data-i18n="j2.b3">Manage client relationships end-to-end, with a track record of on-time delivery and repeat business.</li></ul>
         <div class="tags"><span>TIKTOK</span><span>INSTAGRAM</span><span>BRAND DEALS</span><span>ANALYTICS</span></div>
       </div></article>
-      <article class="job rv"><div class="job-card">
-        <div class="job-top"><h3 data-i18n="j3.role">Client Solutions Manager · Project Intern</h3><span class="when">2023 – 2024</span></div>
-        <p class="org" data-i18n="j3.org">TikTok · Remote</p>
-        <ul><li data-i18n="j3.b1">Assisted project managers and client solutions teams in coordinating timelines, deliverables, and daily operations.</li><li data-i18n="j3.b2">Served as a point of contact for clients, responding to inquiries, providing updates, and ensuring a positive client experience.</li><li data-i18n="j3.b3">Collaborated with cross-functional teams to support planning, execution, and on-deadline completion.</li></ul>
-        <div class="tags"><span>CLIENT SOLUTIONS</span><span>PROJECT OPS</span></div>
-      </div></article>
-      <article class="job rv"><div class="job-card">
+      <article class="job rv"><div class="job-card" data-tilt>
         <div class="job-top"><h3 data-i18n="j4.role">Sales &amp; Marketing Associate</h3><span class="when">2023</span></div>
         <p class="org">Spinnaker Media · Jacksonville, FL</p>
         <ul><li data-i18n="j4.b1">Led client-facing sales efforts, converting prospects into recurring accounts.</li><li data-i18n="j4.b2">Supported content campaigns across TikTok, Instagram, and Reels generating 20K–100K views.</li></ul>
@@ -461,9 +504,9 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
   <div class="wrap">
     <div class="sec-head rv"><span class="numeral">III</span><h2 data-i18n="sk.title">Skills &amp; Certifications</h2><span class="rule"></span></div>
     <div class="skills-grid rv">
-      <div class="tablet"><h3 data-i18n="sk.content">Content &amp; Creator</h3><div class="chips"><span data-i18n="c1">Content strategy</span><span data-i18n="c2">Short-form video</span><span data-i18n="c3">Social media analytics</span><span data-i18n="c4">Trend forecasting</span><span>Canva</span></div></div>
-      <div class="tablet"><h3 data-i18n="sk.sales">Sales &amp; Client</h3><div class="chips"><span data-i18n="c5">Consultative sales</span><span data-i18n="c6">Retail sales</span><span data-i18n="c7">Client relationship management</span><span data-i18n="c8">Account conversion</span></div></div>
-      <div class="tablet"><h3 data-i18n="sk.tools">Tools &amp; Technical</h3><div class="chips"><span>Microsoft Office</span><span>Excel</span><span>Python</span><span>HTML / CSS</span><span>JavaScript</span><span>Java</span><span>C++</span></div></div>
+      <div class="tablet" data-tilt><h3 data-i18n="sk.content">Content &amp; Creator</h3><div class="chips"><span data-i18n="c1">Content strategy</span><span data-i18n="c2">Short-form video</span><span data-i18n="c3">Social media analytics</span><span data-i18n="c4">Trend forecasting</span><span>Canva</span></div></div>
+      <div class="tablet" data-tilt><h3 data-i18n="sk.sales">Sales &amp; Client</h3><div class="chips"><span data-i18n="c5">Consultative sales</span><span data-i18n="c6">Retail sales</span><span data-i18n="c7">Client relationship management</span><span data-i18n="c8">Account conversion</span></div></div>
+      <div class="tablet" data-tilt><h3 data-i18n="sk.tools">Tools &amp; Technical</h3><div class="chips"><span>Microsoft Office</span><span>Excel</span><span>Python</span><span>HTML / CSS</span><span>JavaScript</span><span>Java</span><span>C++</span></div></div>
     </div>
     <div class="certs rv">
       <h3 data-i18n="sk.certs">Certifications</h3>
@@ -476,10 +519,23 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 </section>
 
 <section class="contact" id="contact">
-  <div class="contact-media" aria-hidden="true">
-    <img src="assets/img/helmet-2400.webp" srcset="assets/img/helmet-1280.webp 1280w, assets/img/helmet-2400.webp 2400w" sizes="100vw" alt="" loading="lazy" data-parallax=".08">
-  </div>
-  <div class="wrap">
+  <canvas class="atmos" id="seaFx" aria-hidden="true"></canvas>
+  <div class="wrap contact-grid">
+    <div class="compass-wrap rv">
+      <svg class="compass" id="compass" viewBox="-200 -200 400 400" aria-hidden="true">
+        <defs><path id="ringPath" d="M0,-184 A184,184 0 1,1 0,184 A184,184 0 1,1 0,-184"/></defs>
+        <circle r="198" fill="none" stroke="currentColor" stroke-opacity=".3"/>
+        <g class="spin"><text class="ring-text"><textPath href="#ringPath">MIAMI · BRAND PARTNERSHIPS · MEDIA SALES · CREATOR MARKETING · EN · ES · FR · MIAMI → GLOBAL ·</textPath></text></g>
+        <circle r="176" fill="rgba(10,18,32,.6)" stroke="currentColor" stroke-opacity=".7"/>
+        <g class="ticks"></g>
+        <circle r="110" fill="none" stroke="currentColor" stroke-opacity=".22" stroke-dasharray="2 6"/>
+        <polygon class="rose-a" points="0,0" fill="rgba(212,168,69,.08)" stroke="currentColor" stroke-opacity=".45"/>
+        <polygon class="rose-b" points="0,0" fill="rgba(212,168,69,.15)" stroke="currentColor" stroke-opacity=".85"/>
+        <text class="card" x="0" y="-145">N</text><text class="card" x="145" y="0">E</text><text class="card" x="0" y="145">S</text><text class="card" x="-145" y="0">W</text>
+        <g class="needle"><polygon points="0,-122 10,0 -10,0" style="fill:var(--crimson-hi)"/><polygon points="0,122 10,0 -10,0" style="fill:var(--parch-dim)"/><circle r="9" style="fill:var(--night);stroke:var(--gold-hi)" stroke-width="2"/></g>
+      </svg>
+      <p class="compass-hint" data-i18n="ct.hint">The needle follows you.</p>
+    </div>
     <div class="contact-panel rv">
       <span class="eyebrow" data-i18n="nav.contact">Contact</span>
       <h2 data-i18n="ct.title">Let's build something that <em>travels.</em></h2>
@@ -488,18 +544,20 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
         <button class="btn btn-gold" type="button" id="copy" data-i18n="ct.copy">Copy email address</button>
         <a class="btn btn-blood" href="mailto:moustapha.jk01@gmail.com" data-i18n="ct.email">Email me</a>
         <a class="btn btn-gold" href="https://www.linkedin.com/in/moustapha-kallias-515308341/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        <a class="btn btn-gold" href="https://github.com/9mk8" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
       </div>
       <div class="details">
         <span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M8 15s5-4.6 5-8.5A5 5 0 0 0 3 6.5C3 10.4 8 15 8 15z"/><circle cx="8" cy="6.5" r="1.8"/></svg>Miami, FL</span>
         <a href="tel:+18049124663"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 1.5h3l1.2 3.4-1.8 1.2a8 8 0 0 0 4.5 4.5l1.2-1.8 3.4 1.2v3c0 .8-.7 1.5-1.5 1.5A12.5 12.5 0 0 1 1.5 3c0-.8.7-1.5 1.5-1.5z"/></svg>(804) 912-4663</a>
         <a href="mailto:moustapha.jk01@gmail.com"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="1.5" y="3" width="13" height="10" rx="1"/><path d="M2 4l6 5 6-5"/></svg>moustapha.jk01@gmail.com</a>
+        <a href="https://github.com/9mk8" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M5.5 4 1.5 8l4 4M10.5 4l4 4-4 4"/></svg>github.com/9mk8</a>
       </div>
     </div>
   </div>
 </section>
 </main>
 
-<footer><div class="wrap"><span>© 2026 Moustapha Kallias</span><span data-i18n="ft.made">Designed and built as a living résumé</span><span>EN · ES · FR</span></div></footer>
+<footer><div class="wrap"><span>© 2026 Moustapha Kallias</span><span data-i18n="ft.made">Designed and built as a living résumé</span><a href="https://github.com/9mk8" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></footer>
 
 <div class="toast" id="toast" role="status" aria-live="polite" data-i18n="ct.toast">Email copied</div>
 <button class="to-top" id="toTop" type="button" aria-label="Back to top" data-i18n-aria="aria.top"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M8 13V3M3.5 7.5 8 3l4.5 4.5"/></svg></button>
@@ -534,10 +592,6 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
       "j2.b1":"Dirijo la estrategia de contenido en TikTok e Instagram, con más de 3.9M de vistas acumuladas gracias a una edición basada en datos y la anticipación de tendencias.",
       "j2.b2":"Hice crecer dos canales propios, incluida una cuenta personal de más de 22K seguidores, hasta sumar más de 23.000 seguidores comprometidos.",
       "j2.b3":"Gestiono las relaciones con clientes de principio a fin, con un historial de entregas puntuales y clientes recurrentes.",
-      "j3.role":"Client Solutions Manager · Pasante de proyectos","j3.org":"TikTok · Remoto",
-      "j3.b1":"Apoyé a gerentes de proyecto y equipos de soluciones para clientes en la coordinación de cronogramas, entregables y operaciones diarias.",
-      "j3.b2":"Fui punto de contacto para clientes: respondí consultas, compartí actualizaciones y aseguré una experiencia positiva.",
-      "j3.b3":"Colaboré con equipos multifuncionales en la planificación, ejecución y entrega a tiempo.",
       "j4.role":"Asociado de Ventas y Marketing",
       "j4.b1":"Lideré la venta directa con clientes, convirtiendo prospectos en cuentas recurrentes.",
       "j4.b2":"Apoyé campañas de contenido en TikTok, Instagram y Reels que generaron entre 20K y 100K vistas.",
@@ -546,7 +600,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
       "ct.title":"Construyamos algo que <em>viaje lejos.</em>",
       "ct.lede":"Abierto a roles en alianzas de marca, venta de medios y marketing de creadores, especialmente con una dimensión global o multimercado.",
       "ct.copy":"Copiar correo","ct.email":"Escríbeme","ct.toast":"Correo copiado",
-      "ft.made":"Diseñado y construido como un currículum vivo"
+      "ft.made":"Diseñado y construido como un currículum vivo",
+      "pr.hint":"Toca un idioma para leer el sitio en él.","st.hint":"Pasa el cursor o toca una cifra","sb1":"Entre TikTok e Instagram","sb2":"En dos canales propios","sb3":"Inglés, español y francés","ct.hint":"La aguja te sigue."
     },
     fr:{
       "nav.profile":"Profil","nav.experience":"Expérience","nav.skills":"Compétences","nav.contact":"Contact",
@@ -570,10 +625,6 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
       "j2.b1":"Pilotage de la stratégie de contenu sur TikTok et Instagram, avec plus de 3,9M de vues cumulées grâce à un montage guidé par les données et à l'anticipation des tendances.",
       "j2.b2":"Développement de deux chaînes détenues en propre, dont un compte personnel de plus de 22K abonnés, pour un total de plus de 23 000 abonnés engagés.",
       "j2.b3":"Gestion de bout en bout de la relation client, avec des livraisons dans les délais et des clients qui reviennent.",
-      "j3.role":"Client Solutions Manager · Stagiaire projet","j3.org":"TikTok · À distance",
-      "j3.b1":"Soutien aux chefs de projet et aux équipes Client Solutions dans la coordination des calendriers, des livrables et des opérations quotidiennes.",
-      "j3.b2":"Point de contact des clients : réponse aux demandes, suivi régulier et garantie d'une expérience client positive.",
-      "j3.b3":"Collaboration avec des équipes transverses sur la planification, l'exécution et le respect des délais.",
       "j4.role":"Associé ventes et marketing",
       "j4.b1":"Pilotage des ventes en contact direct avec les clients, transformant des prospects en comptes récurrents.",
       "j4.b2":"Soutien à des campagnes de contenu sur TikTok, Instagram et Reels générant de 20K à 100K vues.",
@@ -582,7 +633,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
       "ct.title":"Construisons quelque chose qui <em>voyage.</em>",
       "ct.lede":"Ouvert aux postes en partenariats de marque, vente média et marketing d'influence, en particulier avec une dimension internationale ou multimarché.",
       "ct.copy":"Copier l'adresse e-mail","ct.email":"M'écrire","ct.toast":"Adresse copiée",
-      "ft.made":"Conçu et développé comme un CV vivant"
+      "ft.made":"Conçu et développé comme un CV vivant",
+      "pr.hint":"Touchez une langue pour lire le site dans celle-ci.","st.hint":"Survolez ou touchez un chiffre","sb1":"Sur TikTok et Instagram","sb2":"Sur deux chaînes détenues en propre","sb3":"Anglais, espagnol et français","ct.hint":"L'aiguille vous suit."
     }
   };
 
@@ -618,6 +670,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
     var y=window.scrollY;
     nav.classList.toggle("scrolled",y>40);
     toTop.classList.toggle("show",y>window.innerHeight*.9);
+    root.style.setProperty("--sp",(y/Math.max(1,document.documentElement.scrollHeight-window.innerHeight)).toFixed(4));
+    tlUpdate();
     par.forEach(function(img){
       var r=img.parentNode.getBoundingClientRect();
       if(r.bottom<0||r.top>window.innerHeight)return;
@@ -672,6 +726,149 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
     function fallback(){var ta=document.createElement("textarea");ta.value=EMAIL;ta.setAttribute("readonly","");ta.style.position="fixed";ta.style.opacity="0";document.body.appendChild(ta);ta.select();try{document.execCommand("copy");}catch(e){}document.body.removeChild(ta);showToast();}
     if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(EMAIL).then(showToast,fallback);}else fallback();
   });
+
+  /* ---------- timeline progress (declared for onScroll) ---------- */
+  var tl,tlJobs;
+  function tlUpdate(){
+    if(!tl)return;
+    var r=tl.getBoundingClientRect(),mid=window.innerHeight*.6;
+    tl.style.setProperty("--p",Math.max(0,Math.min(1,(mid-r.top)/r.height)).toFixed(3));
+    tlJobs.forEach(function(j){j.classList.toggle("lit",j.getBoundingClientRect().top+30<mid);});
+  }
+  tl=document.querySelector(".timeline");tlJobs=tl?tl.querySelectorAll(".job"):[];tlUpdate();
+
+  var fine=window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+
+  /* ---------- hero name: letters rise, surname brush-wipes in gold ---------- */
+  var h1=document.querySelector(".hero h1");
+  if(h1&&!reduce&&h1.firstChild&&h1.firstChild.nodeType===3){
+    var word=h1.firstChild.nodeValue.trim(),frag=document.createDocumentFragment();
+    word.split("").forEach(function(c,i){var sp=document.createElement("span");sp.className="ch";sp.style.setProperty("--i",i);sp.textContent=c;frag.appendChild(sp);});
+    frag.appendChild(document.createTextNode(" "));
+    h1.replaceChild(frag,h1.firstChild);h1.setAttribute("aria-label","Moustapha Kallias");
+  }
+  if(h1)h1.classList.add("ready");
+
+  /* ---------- atmosphere: rising embers and drifting mist ---------- */
+  function sprite(rgb){
+    var c=document.createElement("canvas");c.width=c.height=32;
+    var g=c.getContext("2d"),gr=g.createRadialGradient(16,16,0,16,16,16);
+    gr.addColorStop(0,"rgba(255,246,220,1)");gr.addColorStop(.25,"rgba("+rgb+",.9)");gr.addColorStop(1,"rgba("+rgb+",0)");
+    g.fillStyle=gr;g.fillRect(0,0,32,32);return c;
+  }
+  var SPR={gold:sprite("239,205,120"),red:sprite("200,38,46"),sea:sprite("120,200,215")};
+  function Atmos(cv,o){
+    if(!cv||!cv.getContext)return;
+    var ctx=cv.getContext("2d"),host=cv.parentNode,W=0,H=0,dpr=Math.min(window.devicePixelRatio||1,1.75),
+        P=[],fog=[],run=false,inView=false,t=0,ptr={x:-999,y:-999};
+    function size(){var r=host.getBoundingClientRect();W=r.width;H=r.height;cv.width=Math.round(W*dpr);cv.height=Math.round(H*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);}
+    function spawn(p,init){
+      p.x=Math.random()*W;p.y=init?Math.random()*H:H+10;p.vx=0;p.vy=.15+Math.random()*o.speed;
+      p.r=.6+Math.random()*1.8;p.ph=Math.random()*6.28;p.f=1+Math.random()*2;
+      p.s=Math.random()<o.red?SPR.red:(o.sea&&Math.random()<.5?SPR.sea:SPR.gold);return p;
+    }
+    size();
+    var n=Math.round(Math.min(o.max,W/o.density));
+    for(var i=0;i<n;i++)P.push(spawn({},true));
+    for(i=0;i<4;i++)fog.push({x:Math.random(),y:.25+Math.random()*.65,r:.3+Math.random()*.3,s:.003+Math.random()*.005,ph:Math.random()*6.28});
+    function frame(){
+      t++;ctx.clearRect(0,0,W,H);
+      fog.forEach(function(f){
+        var x=(f.x+Math.sin(t*f.s+f.ph)*.14)*W,y=f.y*H,R=f.r*Math.max(W,H),g=ctx.createRadialGradient(x,y,0,x,y,R);
+        g.addColorStop(0,o.fog);g.addColorStop(1,"rgba(0,0,0,0)");ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
+      });
+      ctx.globalCompositeOperation="lighter";
+      P.forEach(function(p){
+        var dx=p.x-ptr.x,dy=p.y-ptr.y,d=Math.sqrt(dx*dx+dy*dy);
+        if(d<150&&d>0){var k=(150-d)/150*.6;p.vx+=dx/d*k;p.y+=dy/d*k;}
+        p.vx*=.95;p.x+=p.vx+Math.sin(t*.012*p.f+p.ph)*.35;p.y-=p.vy;
+        if(p.y<-12||p.x<-20||p.x>W+20)spawn(p,false);
+        var a=(.35+.65*Math.abs(Math.sin(t*.02*p.f+p.ph)))*Math.min(1,p.y/(H*.25)+.15),sz=p.r*7;
+        ctx.globalAlpha=a*o.alpha;ctx.drawImage(p.s,p.x-sz/2,p.y-sz/2,sz,sz);
+      });
+      ctx.globalAlpha=1;ctx.globalCompositeOperation="source-over";
+      if(run)requestAnimationFrame(frame);
+    }
+    function start(){if(!run&&!reduce){run=true;requestAnimationFrame(frame);}}
+    function stop(){run=false;}
+    if(reduce)frame();
+    if("IntersectionObserver" in window)new IntersectionObserver(function(es){inView=es[0].isIntersecting;inView&&!document.hidden?start():stop();}).observe(host);
+    else start();
+    document.addEventListener("visibilitychange",function(){if(document.hidden)stop();else if(inView)start();});
+    var rt;window.addEventListener("resize",function(){clearTimeout(rt);rt=setTimeout(function(){size();if(reduce)frame();},150);});
+    host.addEventListener("pointermove",function(e){var r=host.getBoundingClientRect();ptr.x=e.clientX-r.left;ptr.y=e.clientY-r.top;},{passive:true});
+    host.addEventListener("pointerleave",function(){ptr.x=ptr.y=-999;});
+  }
+  Atmos(document.getElementById("heroFx"),{max:110,density:13,speed:.55,red:.12,alpha:.9,fog:"rgba(195,209,225,.07)"});
+  Atmos(document.getElementById("seaFx"),{max:60,density:22,speed:.35,red:.05,sea:true,alpha:.7,fog:"rgba(43,156,177,.10)"});
+
+  /* ---------- hero: torchlight and depth that follow the cursor ---------- */
+  var hero=document.querySelector(".hero"),hm=hero.querySelector(".hero-media"),torch=hero.querySelector(".torch");
+  if(fine&&!reduce&&hm&&torch){
+    var tx=0,ty=0,cx=0,cy=0,hraf=0;
+    var ease=function(){
+      cx+=(tx-cx)*.06;cy+=(ty-cy)*.06;
+      hm.style.transform="translate3d("+(-cx*22).toFixed(2)+"px,"+(-cy*14).toFixed(2)+"px,0) scale(1.04)";
+      hraf=Math.abs(tx-cx)+Math.abs(ty-cy)>.001?requestAnimationFrame(ease):0;
+    };
+    hero.addEventListener("pointermove",function(e){
+      var r=hero.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;
+      torch.style.setProperty("--mx",x+"px");torch.style.setProperty("--my",y+"px");hero.classList.add("lit");
+      tx=x/r.width-.5;ty=y/r.height-.5;if(!hraf)hraf=requestAnimationFrame(ease);
+    });
+    hero.addEventListener("pointerleave",function(){hero.classList.remove("lit");tx=ty=0;if(!hraf)hraf=requestAnimationFrame(ease);});
+  }
+
+  /* ---------- cards tilt toward the cursor, buttons pull toward it ---------- */
+  if(fine&&!reduce){
+    document.querySelectorAll("[data-tilt]").forEach(function(el){
+      el.addEventListener("pointermove",function(e){
+        var r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;
+        el.classList.add("tilting");
+        el.style.setProperty("--rx",((.5-y)*5).toFixed(2)+"deg");el.style.setProperty("--ry",((x-.5)*7).toFixed(2)+"deg");
+        el.style.setProperty("--sx",(x*100).toFixed(1)+"%");el.style.setProperty("--sy",(y*100).toFixed(1)+"%");
+      });
+      el.addEventListener("pointerleave",function(){el.classList.remove("tilting");el.style.setProperty("--rx","0deg");el.style.setProperty("--ry","0deg");});
+    });
+    document.querySelectorAll(".btn").forEach(function(b){
+      b.addEventListener("pointermove",function(e){var r=b.getBoundingClientRect();b.style.translate=((e.clientX-r.left-r.width/2)*.18).toFixed(1)+"px "+((e.clientY-r.top-r.height/2)*.3).toFixed(1)+"px";});
+      b.addEventListener("pointerleave",function(){b.style.translate="";});
+    });
+  }
+
+  /* ---------- stat tiles flip on tap or keyboard ---------- */
+  document.querySelectorAll(".stat").forEach(function(st){
+    st.addEventListener("click",function(){st.classList.toggle("flip");});
+    st.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();st.classList.toggle("flip");}});
+  });
+
+  /* ---------- compass: ticks and rose drawn here, needle follows the pointer ---------- */
+  var cmp=document.getElementById("compass");
+  if(cmp){
+    var NS="http://www.w3.org/2000/svg",ticks=cmp.querySelector(".ticks");
+    for(var a=0;a<360;a+=5){
+      var major=a%45===0,ln=document.createElementNS(NS,"line"),rad=a*Math.PI/180,r1=176,r2=major?158:(a%15===0?166:171);
+      ln.setAttribute("x1",(Math.sin(rad)*r1).toFixed(2));ln.setAttribute("y1",(-Math.cos(rad)*r1).toFixed(2));
+      ln.setAttribute("x2",(Math.sin(rad)*r2).toFixed(2));ln.setAttribute("y2",(-Math.cos(rad)*r2).toFixed(2));
+      ln.setAttribute("stroke","currentColor");ln.setAttribute("stroke-opacity",major?".9":".45");ln.setAttribute("stroke-width",major?"1.4":"1");
+      ticks.appendChild(ln);
+    }
+    var star=function(R,r,rot){var pts=[];for(var i=0;i<8;i++){var rr=i%2?r:R,an=(i*45+rot)*Math.PI/180;pts.push((Math.sin(an)*rr).toFixed(1)+","+(-Math.cos(an)*rr).toFixed(1));}return pts.join(" ");};
+    cmp.querySelector(".rose-a").setAttribute("points",star(78,14,45));
+    cmp.querySelector(".rose-b").setAttribute("points",star(128,16,0));
+    var needle=cmp.querySelector(".needle"),cur=0,tgt=0,lastMove=-1e9,nraf=0,cIn=false;
+    var nTick=function(now){
+      if(now-lastMove>2500)tgt=Math.sin(now/1800)*28;
+      var d=((tgt-cur+540)%360)-180;cur+=d*.08;
+      needle.setAttribute("transform","rotate("+cur.toFixed(2)+")");
+      nraf=cIn?requestAnimationFrame(nTick):0;
+    };
+    window.addEventListener("pointermove",function(e){
+      if(!cIn)return;var r=cmp.getBoundingClientRect();
+      tgt=Math.atan2(e.clientX-(r.left+r.width/2),-(e.clientY-(r.top+r.height/2)))*180/Math.PI;lastMove=performance.now();
+    },{passive:true});
+    if(!reduce&&"IntersectionObserver" in window)new IntersectionObserver(function(es){cIn=es[0].isIntersecting;if(cIn&&!nraf)nraf=requestAnimationFrame(nTick);}).observe(cmp);
+  }
 
   /* résumé: print stylesheet renders a clean one-page CV (Save as PDF) */
   document.getElementById("cv").addEventListener("click",function(){

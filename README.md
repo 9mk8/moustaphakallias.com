@@ -6,14 +6,17 @@ Portfolio site for Moustapha Kallias. Single static page, no build step.
 public/
   index.html          the whole site (HTML, CSS, JS inline)
   favicon.svg
-  assets/img/         background paintings (WebP, 1280 and 2400 wide) and og.jpg share image
+  assets/img/         hero painting (WebP, 1280 and 2400 wide) and og.jpg share image
 wrangler.jsonc        Cloudflare Workers static-assets config
 ```
 
 ## Features
 
 - EN / ES / FR language switcher (English is the HTML source; Spanish and French live in the `I18N` object in `index.html`). Choice is remembered per browser.
-- Scrollspy nav, count-up stats, rotating analytics card, copy-email button with toast, back-to-top.
+- Hero intro: the painting fades in, the name rises letter by letter and the surname brushes in gold. Embers and mist drift over the hero (canvas) and scatter around the cursor; a torchlight glow and slight depth shift follow the cursor.
+- Contact section: a compass whose needle follows the cursor (it sways on its own when idle or on touch), with embers and sea mist behind it.
+- Cards tilt toward the cursor, buttons pull toward it, stat tiles flip to show context, the experience timeline fills in gold as you scroll, and clicking a language in the Profile section switches the site to it.
+- Scrollspy nav, scroll progress bar, count-up stats, rotating analytics card, copy-email button with toast, back-to-top.
 - "Download résumé (PDF)" opens the print dialog; the print stylesheet renders a clean one-page résumé, so choose "Save as PDF".
 - Respects `prefers-reduced-motion`.
 
