@@ -1,0 +1,684 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Moustapha Kallias · Sales &amp; Client Experience</title>
+<meta name="description" content="Moustapha Kallias, Sales &amp; Client Experience Professional in Miami. Brand partnerships, media sales, and creator marketing.">
+<meta name="theme-color" content="#0a1220">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://moustaphakallias.com/">
+<meta property="og:title" content="Moustapha Kallias · Sales &amp; Client Experience">
+<meta property="og:description" content="Brand partnerships, media sales, and creator marketing. Miami to global.">
+<meta property="og:image" content="https://moustaphakallias.com/assets/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" as="image" href="assets/img/odysseus-2400.webp" imagesrcset="assets/img/odysseus-1280.webp 1280w, assets/img/odysseus-2400.webp 2400w" imagesizes="100vw">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0a1220; --night:#0f1b2e; --deep:#16273e; --steel:#2a4566;
+  --mist:#8fa9c6; --fog:#c3d1e1;
+  --parch:#efe6d2; --parch-dim:#c9c0ad; --sand:#e2c595;
+  --gold:#d4a845; --gold-hi:#efcd78; --gold-line:rgba(212,168,69,.35);
+  --crimson:#a3161f; --crimson-hi:#c8262e; --sea:#2b9cb1;
+  --card:rgba(13,24,41,.72); --card-solid:#111e33;
+  --f-display:"Cormorant Garamond",Georgia,serif;
+  --f-caps:"Cinzel",Georgia,serif;
+  --f-body:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --pad:clamp(16px,5vw,72px);
+  --max:1180px;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--ink);color:var(--parch);
+  font:400 16px/1.7 var(--f-body);overflow-x:hidden;
+  background-image:
+    radial-gradient(1200px 700px at 85% 30%,rgba(42,69,102,.35),transparent 60%),
+    radial-gradient(900px 600px at 10% 75%,rgba(43,156,177,.10),transparent 60%),
+    radial-gradient(800px 500px at 50% 110%,rgba(163,22,31,.10),transparent 60%);
+  background-attachment:fixed;
+}
+/* canvas grain */
+body::after{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.10;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+::selection{background:var(--crimson);color:var(--parch)}
+:focus-visible{outline:2px solid var(--gold-hi);outline-offset:3px}
+.skip{position:absolute;left:-9999px;top:8px;background:var(--gold);color:var(--ink);padding:8px 14px;z-index:200}
+.skip:focus{left:8px}
+
+/* ---------- nav ---------- */
+.nav{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .4s var(--ease),border-color .4s;border-bottom:1px solid transparent}
+.nav.scrolled{background:rgba(10,18,32,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom-color:var(--gold-line)}
+.nav-in{max-width:calc(var(--max) + 2*var(--pad));margin:0 auto;padding:14px var(--pad);display:flex;align-items:center;gap:24px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font:600 13px/1 var(--f-caps);letter-spacing:.22em;text-transform:uppercase;color:var(--parch)}
+.brand svg{width:34px;height:34px;flex:none}
+.links{display:flex;gap:28px;margin-left:auto;list-style:none;padding:0;margin-block:0}
+.links a{text-decoration:none;font:500 12px/1 var(--f-caps);letter-spacing:.18em;text-transform:uppercase;color:var(--parch-dim);padding:8px 0;position:relative;transition:color .25s}
+.links a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--gold);transform:scaleX(0);transition:transform .35s var(--ease)}
+.links a:hover,.links a.active{color:var(--gold-hi)}
+.links a.active::after,.links a:hover::after{transform:scaleX(1)}
+.lang{display:flex;border:1px solid var(--gold-line);border-radius:2px;overflow:hidden}
+.lang button{all:unset;cursor:pointer;font:600 11px/1 var(--f-caps);letter-spacing:.12em;padding:8px 10px;color:var(--parch-dim);transition:background .25s,color .25s}
+.lang button[aria-pressed="true"]{background:var(--gold);color:var(--ink)}
+.lang button:hover:not([aria-pressed="true"]){color:var(--gold-hi)}
+.burger{all:unset;display:none;cursor:pointer;width:40px;height:40px;place-items:center;margin-left:auto}
+.burger span,.burger span::before,.burger span::after{display:block;width:22px;height:1.5px;background:var(--parch);position:relative;transition:transform .3s,background .3s}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0}
+.burger span::before{top:-7px}.burger span::after{top:7px}
+.nav.open .burger span{background:transparent}
+.nav.open .burger span::before{transform:translateY(7px) rotate(45deg)}
+.nav.open .burger span::after{transform:translateY(-7px) rotate(-45deg)}
+
+/* ---------- shared ---------- */
+.wrap{max-width:calc(var(--max) + 2*var(--pad));margin:0 auto;padding:0 var(--pad)}
+.eyebrow{display:inline-flex;align-items:center;gap:14px;font:500 12px/1.4 var(--f-caps);letter-spacing:.24em;text-transform:uppercase;color:var(--gold-hi)}
+.eyebrow::before{content:"";width:42px;height:1px;background:var(--gold)}
+.btn{display:inline-flex;align-items:center;gap:10px;font:600 12px/1 var(--f-caps);letter-spacing:.18em;text-transform:uppercase;text-decoration:none;padding:16px 24px;border-radius:2px;cursor:pointer;transition:transform .25s var(--ease),background .25s,color .25s,border-color .25s,box-shadow .25s;border:1px solid transparent;background:none;color:inherit}
+.btn:hover{transform:translateY(-2px)}
+.btn-blood{background:var(--crimson);color:var(--parch);border-color:rgba(239,205,120,.45);box-shadow:0 10px 30px -12px rgba(163,22,31,.8)}
+.btn-blood:hover{background:var(--crimson-hi)}
+.btn-gold{border-color:var(--gold);color:var(--gold-hi)}
+.btn-gold:hover{background:var(--gold);color:var(--ink)}
+.btn svg{width:14px;height:14px}
+.meander{height:14px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='14'%3E%3Cpath d='M0 1H20M0 13H20M3 13V4H15V10H8V7H11' fill='none' stroke='%23d4a845' stroke-width='1.3'/%3E%3C/svg%3E") repeat-x center/20px 14px;opacity:.55}
+.sec{padding:clamp(80px,12vw,150px) 0;position:relative}
+.sec-head{display:flex;align-items:center;gap:22px;margin-bottom:clamp(36px,6vw,64px)}
+.numeral{font:600 clamp(14px,1.3vw,16px)/1 var(--f-caps);color:var(--gold);letter-spacing:.2em;padding:10px 12px;border:1px solid var(--gold-line);border-radius:2px;flex:none}
+.sec-head h2{margin:0;font:500 clamp(40px,6vw,76px)/1 var(--f-display);letter-spacing:-.01em}
+.sec-head .rule{flex:1;height:1px;background:linear-gradient(90deg,var(--gold-line),transparent);align-self:center}
+strong{color:var(--gold-hi);font-weight:600}
+
+.js .rv{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.js .rv.in{opacity:1;transform:none}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden;isolation:isolate}
+.hero-media{position:absolute;inset:0;z-index:-2}
+.hero-media img{width:100%;height:115%;object-fit:cover;object-position:0% 70%;will-change:transform}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;
+  background:
+    linear-gradient(90deg,rgba(8,14,26,.86) 0%,rgba(8,14,26,.55) 38%,rgba(8,14,26,0) 62%),
+    linear-gradient(180deg,rgba(8,14,26,.55) 0%,rgba(8,14,26,0) 22%,rgba(8,14,26,0) 70%,var(--ink) 100%)}
+.hero-in{width:100%;max-width:calc(var(--max) + 2*var(--pad));margin:0 auto;padding:120px var(--pad) 140px;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:40px}
+.hero-copy{max-width:560px;align-self:center}
+.hero h1{margin:22px 0 22px;font:500 clamp(58px,9.2vw,128px)/.9 var(--f-display);letter-spacing:-.02em;color:var(--parch);text-shadow:0 4px 40px rgba(0,0,0,.35)}
+.hero h1 em{display:block;font-style:italic;color:var(--gold-hi);padding-left:.55em}
+.lede{font:500 clamp(19px,1.9vw,24px)/1.45 var(--f-display);color:var(--fog);margin:0 0 36px;max-width:30em}
+.ctas{display:flex;flex-wrap:wrap;gap:14px}
+.scroll-cue{position:absolute;left:50%;bottom:28px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;font:500 10px/1 var(--f-caps);letter-spacing:.3em;text-transform:uppercase;color:var(--parch-dim);text-decoration:none}
+.scroll-cue i{width:1px;height:46px;background:linear-gradient(var(--gold),transparent);animation:drip 2.4s var(--ease) infinite;transform-origin:top}
+@keyframes drip{0%{transform:scaleY(0)}50%{transform:scaleY(1);opacity:1}100%{transform:scaleY(1);opacity:0}}
+
+/* ledger card */
+.ledger{width:290px;background:rgba(10,18,32,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--gold-line);border-radius:3px;padding:22px 24px 20px;box-shadow:0 30px 60px -30px rgba(0,0,0,.8);position:relative}
+.ledger::before{content:"";position:absolute;inset:5px;border:1px solid rgba(212,168,69,.14);pointer-events:none}
+.ledger-top{display:flex;justify-content:space-between;align-items:center;font:600 10px/1 var(--f-caps);letter-spacing:.2em;text-transform:uppercase;color:var(--parch-dim);margin-bottom:18px}
+.live{display:inline-flex;align-items:center;gap:7px;color:var(--gold-hi)}
+.live::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--crimson-hi);box-shadow:0 0 0 0 rgba(200,38,46,.7);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 8px rgba(200,38,46,0)}100%{box-shadow:0 0 0 0 rgba(200,38,46,0)}}
+.who{display:flex;align-items:center;gap:12px;padding-bottom:16px;border-bottom:1px solid var(--gold-line);margin-bottom:16px}
+.who b{display:block;font:600 15px/1.2 var(--f-body);color:var(--parch)}
+.who small{font-size:12px;color:var(--mist)}
+.avatar{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--crimson);border:1px solid var(--gold);font:600 13px/1 var(--f-caps);color:var(--parch)}
+.slides{position:relative;height:96px}
+.slide{position:absolute;inset:0;opacity:0;transform:translateY(8px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.slide.on{opacity:1;transform:none}
+.slide .v{font:500 52px/1 var(--f-display);color:var(--gold-hi)}
+.slide .l{font-size:13px;color:var(--parch);margin-top:6px}
+.slide .n{font-size:11px;color:var(--mist);letter-spacing:.04em}
+.slide .n::before{content:"\25B2  ";color:var(--sea);font-size:9px}
+.dots{display:flex;gap:6px;margin-top:10px}
+.dots i{width:18px;height:2px;background:var(--gold-line);transition:background .4s}
+.dots i.on{background:var(--gold)}
+
+/* ---------- marquee ---------- */
+.marquee{background:var(--crimson);border-block:1px solid rgba(239,205,120,.5);overflow:hidden;position:relative;z-index:2;box-shadow:0 0 0 6px var(--ink),0 0 0 7px var(--gold-line)}
+.track{display:flex;width:max-content;animation:slide 38s linear infinite}
+.track span{font:600 clamp(13px,1.3vw,15px)/1 var(--f-caps);letter-spacing:.22em;text-transform:uppercase;color:var(--parch);padding:20px 0;white-space:nowrap;display:flex;align-items:center}
+.track span::after{content:"\2726";color:var(--gold-hi);margin:0 30px;font-size:.8em}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* ---------- stats ---------- */
+.stats{padding:clamp(56px,8vw,90px) 0 0}
+.stat-row{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--gold-line);border-bottom:1px solid var(--gold-line)}
+.stat{padding:34px 20px;text-align:center;position:relative}
+.stat+.stat::before{content:"";position:absolute;left:0;top:24%;bottom:24%;width:1px;background:var(--gold-line)}
+.stat .num{font:500 clamp(46px,6vw,76px)/1 var(--f-display);color:var(--parch)}
+.stat .num sup{font-size:.42em;color:var(--gold);vertical-align:.95em;margin-left:2px}
+.stat .cap{margin-top:10px;font:500 11px/1.4 var(--f-caps);letter-spacing:.2em;text-transform:uppercase;color:var(--mist)}
+
+/* ---------- profile ---------- */
+.profile-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:clamp(36px,6vw,80px);align-items:start}
+.prose p{margin:0 0 1.25em;font-size:clamp(16px,1.25vw,18px);color:var(--parch-dim)}
+.prose p:first-child{font:500 clamp(23px,2.3vw,30px)/1.4 var(--f-display);color:var(--parch)}
+.prose p:first-child strong{font-weight:600}
+.tablet{background:var(--card);border:1px solid var(--gold-line);border-radius:3px;padding:28px;position:relative}
+.tablet+.tablet{margin-top:20px}
+.tablet h3{margin:0 0 18px;font:600 12px/1 var(--f-caps);letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.langs{list-style:none;margin:0;padding:0}
+.langs li{display:flex;justify-content:space-between;align-items:baseline;padding:12px 0;border-bottom:1px dashed rgba(212,168,69,.2)}
+.langs li:last-child{border-bottom:0}
+.langs b{font:500 22px/1 var(--f-display);color:var(--parch)}
+.langs span{font:500 10px/1 var(--f-caps);letter-spacing:.2em;text-transform:uppercase;color:var(--mist)}
+.edu b{display:block;font:500 24px/1.2 var(--f-display);color:var(--parch)}
+.edu p{margin:8px 0 0;font-size:14px;color:var(--parch-dim);line-height:1.6}
+.gpa{display:inline-block;margin-top:16px;font:600 11px/1 var(--f-caps);letter-spacing:.18em;color:var(--ink);background:var(--gold);padding:8px 12px;border-radius:2px}
+
+/* ---------- experience ---------- */
+.timeline{position:relative;padding-left:56px}
+.timeline::before{content:"";position:absolute;left:15px;top:8px;bottom:8px;width:1px;background:linear-gradient(var(--gold),rgba(212,168,69,.15) 85%,transparent)}
+.job{position:relative;margin-bottom:28px}
+.job::before{content:"";position:absolute;left:-49px;top:30px;width:13px;height:13px;transform:rotate(45deg);background:var(--ink);border:1px solid var(--gold);box-shadow:0 0 0 5px var(--ink)}
+.job:first-child::before{background:var(--crimson);border-color:var(--gold-hi)}
+.job-card{background:var(--card);border:1px solid rgba(212,168,69,.2);border-radius:3px;padding:clamp(22px,3vw,34px);transition:border-color .35s,transform .35s var(--ease),background .35s}
+.job-card:hover{border-color:var(--gold-line);transform:translateX(4px);background:rgba(17,30,51,.85)}
+.job-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 20px;align-items:baseline}
+.job h3{margin:0;font:500 clamp(25px,2.5vw,32px)/1.15 var(--f-display);color:var(--parch)}
+.when{font:600 11px/1 var(--f-caps);letter-spacing:.18em;text-transform:uppercase;color:var(--gold);white-space:nowrap}
+.org{margin:6px 0 16px;font-size:14px;color:var(--mist)}
+.job ul{margin:0;padding:0;list-style:none}
+.job li{position:relative;padding-left:22px;margin-bottom:8px;color:var(--parch-dim);font-size:15.5px}
+.job li::before{content:"";position:absolute;left:2px;top:.75em;width:8px;height:1px;background:var(--gold)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.tags span{font:600 10px/1 var(--f-caps);letter-spacing:.16em;color:var(--fog);border:1px solid rgba(143,169,198,.3);padding:7px 10px;border-radius:2px}
+
+/* ---------- skills ---------- */
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{font-size:14px;padding:8px 13px;border-radius:2px;background:rgba(239,230,210,.05);border:1px solid rgba(239,230,210,.12);color:var(--parch);transition:border-color .25s,color .25s}
+.chips span:hover{border-color:var(--gold);color:var(--gold-hi)}
+.certs{margin-top:20px;display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--gold-line);border-radius:3px;background:var(--card)}
+.certs h3{grid-column:1/-1;margin:0;padding:18px 24px;border-bottom:1px solid var(--gold-line);font:600 12px/1 var(--f-caps);letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.cert{padding:22px 24px;font:500 20px/1.25 var(--f-display);color:var(--parch);display:flex;gap:12px;align-items:flex-start}
+.cert+.cert{border-left:1px solid rgba(212,168,69,.18)}
+.cert::before{content:"";flex:none;width:9px;height:9px;margin-top:8px;transform:rotate(45deg);border:1px solid var(--gold)}
+
+/* ---------- contact ---------- */
+.contact{position:relative;min-height:min(100svh,880px);display:flex;align-items:center;overflow:hidden;isolation:isolate;padding:120px 0}
+.contact-media{position:absolute;inset:0;z-index:-2}
+.contact-media img{width:100%;height:118%;object-fit:cover;object-position:80% 55%;will-change:transform}
+.contact::before{content:"";position:absolute;inset:0;z-index:-1;background:
+  linear-gradient(180deg,var(--ink) 0%,rgba(10,18,32,0) 18%,rgba(10,18,32,0) 80%,var(--ink) 100%),
+  linear-gradient(90deg,rgba(10,18,32,.15) 0%,rgba(10,18,32,0) 45%,rgba(10,18,32,.55) 70%,rgba(10,18,32,.8) 100%)}
+.contact .wrap{width:100%;display:flex;justify-content:flex-end}
+.contact-panel{width:min(540px,44vw);background:rgba(10,18,32,.8);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--gold-line);border-radius:3px;padding:clamp(28px,4vw,48px);position:relative}
+.contact-panel::before{content:"";position:absolute;inset:6px;border:1px solid rgba(212,168,69,.13);pointer-events:none}
+.contact h2{margin:18px 0 18px;font:500 clamp(40px,5vw,64px)/1 var(--f-display);color:var(--parch)}
+.contact h2 em{color:var(--gold-hi)}
+.contact p{margin:0 0 28px;color:var(--parch-dim)}
+.contact .ctas{gap:12px}
+.details{margin-top:30px;padding-top:22px;border-top:1px solid var(--gold-line);display:grid;gap:10px;font-size:14px}
+.details a,.details span{display:flex;align-items:center;gap:12px;color:var(--fog);text-decoration:none}
+.details a:hover{color:var(--gold-hi)}
+.details svg{width:15px;height:15px;color:var(--gold);flex:none}
+
+/* ---------- footer ---------- */
+footer{padding:34px 0 44px;border-top:1px solid var(--gold-line);font:500 11px/1.6 var(--f-caps);letter-spacing:.18em;text-transform:uppercase;color:var(--mist)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+
+.toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,20px);opacity:0;pointer-events:none;z-index:90;background:var(--gold);color:var(--ink);font:600 12px/1 var(--f-caps);letter-spacing:.16em;text-transform:uppercase;padding:14px 20px;border-radius:2px;transition:opacity .3s,transform .3s var(--ease)}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.to-top{position:fixed;right:20px;bottom:20px;z-index:60;width:46px;height:46px;border-radius:2px;border:1px solid var(--gold-line);background:rgba(10,18,32,.85);color:var(--gold-hi);display:grid;place-items:center;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .3s,transform .3s var(--ease)}
+.to-top.show{opacity:1;pointer-events:auto}
+.to-top:hover{transform:translateY(-3px);border-color:var(--gold)}
+.to-top svg{width:16px;height:16px}
+
+/* ---------- responsive ---------- */
+@media (max-width:980px){
+  .profile-grid{grid-template-columns:1fr}
+  .skills-grid{grid-template-columns:1fr 1fr}
+  .certs{grid-template-columns:1fr 1fr}
+  .cert:nth-of-type(3){border-left:0}
+  .cert:nth-of-type(n+3){border-top:1px solid rgba(212,168,69,.18)}
+  .ledger{display:none}
+  .hero-in{grid-template-columns:1fr}
+}
+@media (max-width:820px){
+  .links,.nav-in>.lang{display:none}
+  .burger{display:grid}
+  .nav.open{background:rgba(10,18,32,.97)}
+  .nav.open .links{display:flex;flex-direction:column;gap:0;position:absolute;top:100%;left:0;right:0;background:rgba(10,18,32,.97);padding:8px var(--pad) 24px;border-bottom:1px solid var(--gold-line)}
+  .nav.open .links a{display:block;padding:16px 0;font-size:14px;border-bottom:1px solid rgba(212,168,69,.12)}
+  .nav.open .links .m-lang{display:block;padding-top:18px}
+  .stat-row{grid-template-columns:1fr 1fr}
+  .stat:nth-child(3)::before{display:none}
+  .stat:nth-child(n+3){border-top:1px solid var(--gold-line)}
+  .contact{display:block;padding:0 0 70px;min-height:0}
+  .contact-media{position:relative;height:100vw;max-height:560px}
+  .contact-media img{height:100%;object-position:46% 58%}
+  .contact::before{background:linear-gradient(180deg,var(--ink) 0%,rgba(10,18,32,0) 14%)}
+  .contact-media::after{content:"";position:absolute;inset:auto 0 0 0;height:40%;background:linear-gradient(transparent,var(--ink))}
+  .contact .wrap{display:block;margin-top:-64px}
+  .contact-panel{width:100%}
+}
+@media (min-width:821px){.m-lang{display:none}}
+@media (max-width:640px){
+  .hero{align-items:flex-start}
+  .hero-media{top:34%}
+  .hero-media img{height:100%;object-position:50% 40%;-webkit-mask-image:linear-gradient(transparent,#000 22%);mask-image:linear-gradient(transparent,#000 22%)}
+  .hero::before{background:linear-gradient(180deg,rgba(10,18,32,0) 60%,var(--ink) 100%)}
+  .hero-in{padding:104px var(--pad) 120px}
+  .hero h1 em{padding-left:.3em}
+  .skills-grid,.certs{grid-template-columns:1fr}
+  .cert+.cert{border-left:0;border-top:1px solid rgba(212,168,69,.18)}
+  .timeline{padding-left:34px}
+  .timeline::before{left:6px}
+  .job::before{left:-34px}
+  .sec-head{gap:14px}
+  .sec-head .rule{display:none}
+  .btn{padding:15px 20px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .js .rv{opacity:1;transform:none}
+}
+
+/* ---------- print: clean one-page résumé ---------- */
+@media print{
+  @page{margin:8mm 11mm}
+  body{background:#fff!important;color:#111;font-size:9pt;line-height:1.32}
+  .print-contact{display:flex!important;flex-wrap:wrap;gap:4pt 14pt;font:400 9pt/1.3 var(--f-body);margin:2pt 0 0}
+  body::after,.contact,.nav,.hero-media,.hero::before,.scroll-cue,.ledger,.marquee,.stats,.contact-media,.contact::before,.to-top,.toast,.ctas,.meander,.tags,.numeral,.rule,footer{display:none!important}
+  .js .rv{opacity:1!important;transform:none!important}
+  *{color:#111!important;background:none!important;box-shadow:none!important;border-color:#bbb!important;backdrop-filter:none!important}
+  .hero{min-height:0;display:block}
+  .hero-in{display:block;padding:0}
+  .eyebrow::before{display:none}
+  .hero h1{font-size:22pt;margin:2pt 0}
+  .hero h1 em{display:inline;padding:0}
+  .lede{font-size:10.5pt;margin:0 0 4pt}
+  .sec{padding:4pt 0}
+  .sec-head{margin:0 0 4pt;border-bottom:1px solid #999}
+  .sec-head h2{font-size:13pt}
+  .profile-grid{grid-template-columns:1.5fr 1fr;gap:14pt}
+  .prose p,.prose p:first-child{font:400 9pt/1.35 var(--f-body);margin:0 0 2pt}
+  .tablet{padding:2pt 0;border:0}
+  .tablet h3{margin:0 0 3pt}
+  .edu p{font-size:9pt;margin:2pt 0 0}.gpa{margin-top:3pt;padding:0}
+  .stats{display:none!important}
+  .tablet+.tablet{margin-top:4pt}
+  .langs li{padding:1pt 0}.langs b,.edu b{font-size:12pt}
+  .timeline{padding:0}.timeline::before,.job::before{display:none}
+  .job{margin-bottom:4pt;break-inside:avoid}
+  .job-card{padding:0;border:0}
+  .job h3{font-size:11pt}.org{margin:0 0 1pt;font-size:9pt}
+  .job li{font-size:8.8pt;margin:0;line-height:1.3}
+  .skills-grid{grid-template-columns:repeat(3,1fr);gap:8pt}
+  .chips{display:block}.chips span{display:inline;padding:0;border:0;font-size:9pt}
+  .chips span:not(:last-child)::after{content:","}
+  .certs{grid-template-columns:repeat(4,1fr);border:0;margin-top:6pt}
+  .certs h3{padding:0 0 3pt;border:0}.cert{padding:0;font-size:11pt;border:0!important}.cert::before{display:none}
+  .contact{min-height:0;padding:6pt 0;display:block}
+  .contact-panel{width:100%;padding:0;border:0}
+  .contact-panel::before{display:none}
+  .contact h2,.contact p,.contact .eyebrow{display:none}
+  .details{margin:0;padding:0;border:0;display:flex;gap:16pt}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a class="brand" href="#top" aria-label="Moustapha Kallias, home">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#0f1b2e" stroke="#d4a845"/><circle cx="20" cy="20" r="15.5" fill="none" stroke="#d4a845" stroke-opacity=".35"/><text x="20" y="25" text-anchor="middle" font-family="Cinzel,Georgia,serif" font-size="13" font-weight="600" fill="#efcd78" letter-spacing="1">MK</text></svg>
+      <span>Moustapha Kallias</span>
+    </a>
+    <ul class="links" id="links">
+      <li><a href="#profile" data-i18n="nav.profile">Profile</a></li>
+      <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
+      <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
+      <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+      <li class="m-lang"><div class="lang" role="group" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="es" aria-pressed="false">ES</button><button type="button" data-lang="fr" aria-pressed="false">FR</button></div></li>
+    </ul>
+    <div class="lang" role="group" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="es" aria-pressed="false">ES</button><button type="button" data-lang="fr" aria-pressed="false">FR</button></div>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="links" aria-label="Menu" data-i18n-aria="aria.menu"><span></span></button>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero" id="top">
+  <div class="hero-media" aria-hidden="true">
+    <img src="assets/img/odysseus-2400.webp" srcset="assets/img/odysseus-1280.webp 1280w, assets/img/odysseus-2400.webp 2400w" sizes="100vw" alt="" fetchpriority="high" data-parallax=".12">
+  </div>
+  <div class="hero-in">
+    <div class="hero-copy">
+      <span class="eyebrow" data-i18n="hero.eyebrow">Sales &amp; Client Experience · Miami, FL</span>
+      <h1>Moustapha <em>Kallias</em></h1>
+      <p class="print-contact" hidden><span>Miami, FL</span><span>(804) 912-4663</span><span>moustapha.jk01@gmail.com</span><span>linkedin.com/in/moustapha-kallias-515308341</span><span>moustaphakallias.com</span></p>
+      <p class="lede" data-i18n="hero.lede">I turn attention into revenue: building audiences, closing accounts, and shaping how brands travel across cultures.</p>
+      <div class="ctas">
+        <a class="btn btn-blood" href="#contact" data-i18n="hero.cta">Get in touch</a>
+        <button class="btn btn-gold" type="button" id="cv"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 2v9M4 7l4 4 4-4M2 14h12"/></svg><span data-i18n="hero.cv">Download résumé (PDF)</span></button>
+      </div>
+    </div>
+    <aside class="ledger" aria-label="Creator analytics">
+      <div class="ledger-top"><span data-i18n="ledger.title">Analytics · 30 days</span><span class="live" data-i18n="ledger.live">Live</span></div>
+      <div class="who"><span class="avatar" aria-hidden="true">MK</span><div><b>Moustapha K.</b><small>@moustapha · creator</small></div></div>
+      <div class="slides">
+        <div class="slide on"><div class="v">3.9M+</div><div class="l" data-i18n="s1l">Cumulative views</div><div class="n" data-i18n="s1n">Trend-driven</div></div>
+        <div class="slide"><div class="v">22K+</div><div class="l" data-i18n="s2l">Followers, main account</div><div class="n" data-i18n="s2n">Grown from zero</div></div>
+        <div class="slide"><div class="v">100K</div><div class="l" data-i18n="s3l">Peak campaign reach</div><div class="n" data-i18n="s3n">Brand deals</div></div>
+      </div>
+      <div class="dots" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
+    </aside>
+  </div>
+  <a class="scroll-cue" href="#profile" aria-hidden="true" tabindex="-1"><span data-i18n="hero.scroll">Scroll</span><i></i></a>
+</section>
+
+<div class="marquee" aria-hidden="true"><div class="track">
+  <span data-i18n="m1">Brand Partnerships</span><span data-i18n="m2">Media Sales</span><span data-i18n="m3">Creator Marketing</span><span>EN · ES · FR</span><span>Miami → Global</span>
+  <span data-i18n="m1">Brand Partnerships</span><span data-i18n="m2">Media Sales</span><span data-i18n="m3">Creator Marketing</span><span>EN · ES · FR</span><span>Miami → Global</span>
+</div></div>
+
+<section class="stats" aria-label="Highlights">
+  <div class="wrap">
+    <div class="stat-row rv">
+      <div class="stat"><div class="num" data-count="3.9" data-dec="1">3.9<sup>M+</sup></div><div class="cap" data-i18n="s1l">Cumulative views</div></div>
+      <div class="stat"><div class="num" data-count="23" data-dec="0">23<sup>K+</sup></div><div class="cap" data-i18n="st.followers">Engaged followers</div></div>
+      <div class="stat"><div class="num" data-count="3" data-dec="0">3</div><div class="cap" data-i18n="st.langs">Languages, fluent</div></div>
+      <div class="stat"><div class="num" data-count="4.0" data-dec="1">4.0</div><div class="cap" data-i18n="st.gpa">GPA at FIU</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="profile">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="numeral">I</span><h2 data-i18n="nav.profile">Profile</h2><span class="rule"></span></div>
+    <div class="profile-grid">
+      <div class="prose rv">
+        <p data-i18n="p1">Over the past two years I've grown a <strong>20K+ TikTok community from zero</strong>, partnering with brands on sponsored campaigns and using performance analytics to shape what I create, and how it earns.</p>
+        <p data-i18n="p2">In parallel, I've sold media and advertising at Spinnaker Media and consumer tech at Best Buy, <strong>consistently hitting or exceeding targets</strong> during high-pressure retail periods.</p>
+        <p data-i18n="p3">My International Relations coursework sharpens the part of this work I care about most: how messages move across cultures, and why some brands travel while others don't. I'm looking for roles at the intersection of <strong>brand partnerships, media sales, and creator marketing</strong>, ideally with a global or multi-market dimension.</p>
+      </div>
+      <div class="rv">
+        <div class="tablet">
+          <h3 data-i18n="pr.langs">Languages</h3>
+          <ul class="langs">
+            <li><b>English</b><span data-i18n="pr.native">Native</span></li>
+            <li><b>Español</b><span data-i18n="pr.fluent">Fluent</span></li>
+            <li><b>Français</b><span data-i18n="pr.fluent">Fluent</span></li>
+          </ul>
+        </div>
+        <div class="tablet edu">
+          <h3 data-i18n="pr.edu">Education</h3>
+          <b>Florida International University</b>
+          <p><span data-i18n="pr.degree">B.S. Public Relations, Advertising &amp; Applied Communication</span><br>College of Communication, Architecture + The Arts<br>2025 – <span data-i18n="present">Present</span></p>
+          <span class="gpa">GPA 4.0</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="meander"></div></div>
+
+<section class="sec" id="experience">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="numeral">II</span><h2 data-i18n="nav.experience">Experience</h2><span class="rule"></span></div>
+    <div class="timeline">
+      <article class="job rv"><div class="job-card">
+        <div class="job-top"><h3 data-i18n="j1.role">Sales Strategy Associate</h3><span class="when">2024 – <span data-i18n="present">Present</span></span></div>
+        <p class="org">Meta · Ray-Ban Meta Smart Glasses · Miami, FL</p>
+        <ul><li data-i18n="j1.b1">Analyzed sales performance data to identify trends, opportunities, and areas for business growth.</li><li data-i18n="j1.b2">Partnered with sales, marketing, and operations teams to develop strategic initiatives that improved revenue and operational efficiency.</li></ul>
+        <div class="tags"><span>SALES ANALYTICS</span><span>STRATEGY</span><span>CROSS-FUNCTIONAL</span></div>
+      </div></article>
+      <article class="job rv"><div class="job-card">
+        <div class="job-top"><h3 data-i18n="j2.role">Social Media &amp; Content Strategist</h3><span class="when">2023 – <span data-i18n="present">Present</span></span></div>
+        <p class="org" data-i18n="j2.org">Self-managed · Creator business</p>
+        <ul><li data-i18n="j2.b1">Lead content strategy across TikTok and Instagram, driving 3.9M+ cumulative views through data-informed editing and trend forecasting.</li><li data-i18n="j2.b2">Grew two owned channels, including a personal account to 22K+ followers, to a combined 23,000+ engaged followers.</li><li data-i18n="j2.b3">Manage client relationships end-to-end, with a track record of on-time delivery and repeat business.</li></ul>
+        <div class="tags"><span>TIKTOK</span><span>INSTAGRAM</span><span>BRAND DEALS</span><span>ANALYTICS</span></div>
+      </div></article>
+      <article class="job rv"><div class="job-card">
+        <div class="job-top"><h3 data-i18n="j3.role">Client Solutions Manager · Project Intern</h3><span class="when">2023 – 2024</span></div>
+        <p class="org" data-i18n="j3.org">TikTok · Remote</p>
+        <ul><li data-i18n="j3.b1">Assisted project managers and client solutions teams in coordinating timelines, deliverables, and daily operations.</li><li data-i18n="j3.b2">Served as a point of contact for clients, responding to inquiries, providing updates, and ensuring a positive client experience.</li><li data-i18n="j3.b3">Collaborated with cross-functional teams to support planning, execution, and on-deadline completion.</li></ul>
+        <div class="tags"><span>CLIENT SOLUTIONS</span><span>PROJECT OPS</span></div>
+      </div></article>
+      <article class="job rv"><div class="job-card">
+        <div class="job-top"><h3 data-i18n="j4.role">Sales &amp; Marketing Associate</h3><span class="when">2023</span></div>
+        <p class="org">Spinnaker Media · Jacksonville, FL</p>
+        <ul><li data-i18n="j4.b1">Led client-facing sales efforts, converting prospects into recurring accounts.</li><li data-i18n="j4.b2">Supported content campaigns across TikTok, Instagram, and Reels generating 20K–100K views.</li></ul>
+        <div class="tags"><span>MEDIA SALES</span><span>CAMPAIGNS</span></div>
+      </div></article>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="meander"></div></div>
+
+<section class="sec" id="skills">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="numeral">III</span><h2 data-i18n="sk.title">Skills &amp; Certifications</h2><span class="rule"></span></div>
+    <div class="skills-grid rv">
+      <div class="tablet"><h3 data-i18n="sk.content">Content &amp; Creator</h3><div class="chips"><span data-i18n="c1">Content strategy</span><span data-i18n="c2">Short-form video</span><span data-i18n="c3">Social media analytics</span><span data-i18n="c4">Trend forecasting</span><span>Canva</span></div></div>
+      <div class="tablet"><h3 data-i18n="sk.sales">Sales &amp; Client</h3><div class="chips"><span data-i18n="c5">Consultative sales</span><span data-i18n="c6">Retail sales</span><span data-i18n="c7">Client relationship management</span><span data-i18n="c8">Account conversion</span></div></div>
+      <div class="tablet"><h3 data-i18n="sk.tools">Tools &amp; Technical</h3><div class="chips"><span>Microsoft Office</span><span>Excel</span><span>Python</span><span>HTML / CSS</span><span>JavaScript</span><span>Java</span><span>C++</span></div></div>
+    </div>
+    <div class="certs rv">
+      <h3 data-i18n="sk.certs">Certifications</h3>
+      <div class="cert">HubSpot Digital Marketing</div>
+      <div class="cert">Google Analytics</div>
+      <div class="cert">freeCodeCamp Web Development</div>
+      <div class="cert">Bloomberg Finance Fundamentals</div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="contact-media" aria-hidden="true">
+    <img src="assets/img/helmet-2400.webp" srcset="assets/img/helmet-1280.webp 1280w, assets/img/helmet-2400.webp 2400w" sizes="100vw" alt="" loading="lazy" data-parallax=".08">
+  </div>
+  <div class="wrap">
+    <div class="contact-panel rv">
+      <span class="eyebrow" data-i18n="nav.contact">Contact</span>
+      <h2 data-i18n="ct.title">Let's build something that <em>travels.</em></h2>
+      <p data-i18n="ct.lede">Open to roles in brand partnerships, media sales, and creator marketing, especially with a global or multi-market dimension.</p>
+      <div class="ctas">
+        <button class="btn btn-gold" type="button" id="copy" data-i18n="ct.copy">Copy email address</button>
+        <a class="btn btn-blood" href="mailto:moustapha.jk01@gmail.com" data-i18n="ct.email">Email me</a>
+        <a class="btn btn-gold" href="https://www.linkedin.com/in/moustapha-kallias-515308341/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+      </div>
+      <div class="details">
+        <span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M8 15s5-4.6 5-8.5A5 5 0 0 0 3 6.5C3 10.4 8 15 8 15z"/><circle cx="8" cy="6.5" r="1.8"/></svg>Miami, FL</span>
+        <a href="tel:+18049124663"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 1.5h3l1.2 3.4-1.8 1.2a8 8 0 0 0 4.5 4.5l1.2-1.8 3.4 1.2v3c0 .8-.7 1.5-1.5 1.5A12.5 12.5 0 0 1 1.5 3c0-.8.7-1.5 1.5-1.5z"/></svg>(804) 912-4663</a>
+        <a href="mailto:moustapha.jk01@gmail.com"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="1.5" y="3" width="13" height="10" rx="1"/><path d="M2 4l6 5 6-5"/></svg>moustapha.jk01@gmail.com</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><span>© 2026 Moustapha Kallias</span><span data-i18n="ft.made">Designed and built as a living résumé</span><span>EN · ES · FR</span></div></footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite" data-i18n="ct.toast">Email copied</div>
+<button class="to-top" id="toTop" type="button" aria-label="Back to top" data-i18n-aria="aria.top"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M8 13V3M3.5 7.5 8 3l4.5 4.5"/></svg></button>
+
+<script>
+(function(){
+  "use strict";
+  var root=document.documentElement;root.classList.add("js");
+  var reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var EMAIL="moustapha.jk01@gmail.com";
+
+  var I18N={
+    es:{
+      "nav.profile":"Perfil","nav.experience":"Experiencia","nav.skills":"Habilidades","nav.contact":"Contacto",
+      "aria.menu":"Menú","aria.top":"Volver arriba",
+      "hero.eyebrow":"Ventas y Experiencia del Cliente · Miami, FL",
+      "hero.lede":"Convierto la atención en ingresos: construyo audiencias, cierro cuentas y doy forma a cómo las marcas viajan entre culturas.",
+      "hero.cta":"Contáctame","hero.cv":"Descargar CV (PDF)","hero.scroll":"Desliza",
+      "ledger.title":"Analítica · 30 días","ledger.live":"En vivo",
+      "s1l":"Vistas acumuladas","s1n":"Impulsado por tendencias","s2l":"Seguidores, cuenta principal","s2n":"Desde cero","s3l":"Alcance máximo de campaña","s3n":"Acuerdos con marcas",
+      "m1":"Alianzas de marca","m2":"Venta de medios","m3":"Marketing de creadores",
+      "st.followers":"Seguidores comprometidos","st.langs":"Idiomas con fluidez","st.gpa":"GPA en FIU",
+      "p1":"En los últimos dos años he hecho crecer una <strong>comunidad de más de 20K en TikTok desde cero</strong>, colaborando con marcas en campañas patrocinadas y usando analítica de rendimiento para definir lo que creo y cómo genera ingresos.",
+      "p2":"En paralelo, he vendido medios y publicidad en Spinnaker Media y tecnología de consumo en Best Buy, <strong>alcanzando o superando objetivos de forma constante</strong> en temporadas de alta presión.",
+      "p3":"Mis estudios en Relaciones Internacionales afinan la parte de este trabajo que más me importa: cómo se mueven los mensajes entre culturas y por qué algunas marcas cruzan fronteras y otras no. Busco roles en la intersección de <strong>alianzas de marca, venta de medios y marketing de creadores</strong>, idealmente con una dimensión global o multimercado.",
+      "pr.langs":"Idiomas","pr.native":"Nativo","pr.fluent":"Fluido","pr.edu":"Educación",
+      "pr.degree":"Licenciatura en Relaciones Públicas, Publicidad y Comunicación Aplicada","present":"Actualidad",
+      "j1.role":"Asociado de Estrategia de Ventas",
+      "j1.b1":"Analicé datos de rendimiento de ventas para identificar tendencias, oportunidades y áreas de crecimiento.",
+      "j1.b2":"Colaboré con equipos de ventas, marketing y operaciones para desarrollar iniciativas estratégicas que mejoraron los ingresos y la eficiencia operativa.",
+      "j2.role":"Estratega de Redes Sociales y Contenido","j2.org":"Autogestionado · Negocio de creador",
+      "j2.b1":"Dirijo la estrategia de contenido en TikTok e Instagram, con más de 3.9M de vistas acumuladas gracias a una edición basada en datos y la anticipación de tendencias.",
+      "j2.b2":"Hice crecer dos canales propios, incluida una cuenta personal de más de 22K seguidores, hasta sumar más de 23.000 seguidores comprometidos.",
+      "j2.b3":"Gestiono las relaciones con clientes de principio a fin, con un historial de entregas puntuales y clientes recurrentes.",
+      "j3.role":"Client Solutions Manager · Pasante de proyectos","j3.org":"TikTok · Remoto",
+      "j3.b1":"Apoyé a gerentes de proyecto y equipos de soluciones para clientes en la coordinación de cronogramas, entregables y operaciones diarias.",
+      "j3.b2":"Fui punto de contacto para clientes: respondí consultas, compartí actualizaciones y aseguré una experiencia positiva.",
+      "j3.b3":"Colaboré con equipos multifuncionales en la planificación, ejecución y entrega a tiempo.",
+      "j4.role":"Asociado de Ventas y Marketing",
+      "j4.b1":"Lideré la venta directa con clientes, convirtiendo prospectos en cuentas recurrentes.",
+      "j4.b2":"Apoyé campañas de contenido en TikTok, Instagram y Reels que generaron entre 20K y 100K vistas.",
+      "sk.title":"Habilidades y certificaciones","sk.content":"Contenido y creación","sk.sales":"Ventas y clientes","sk.tools":"Herramientas y tecnología","sk.certs":"Certificaciones",
+      "c1":"Estrategia de contenido","c2":"Video corto","c3":"Analítica de redes sociales","c4":"Anticipación de tendencias","c5":"Venta consultiva","c6":"Ventas minoristas","c7":"Gestión de relaciones con clientes","c8":"Conversión de cuentas",
+      "ct.title":"Construyamos algo que <em>viaje lejos.</em>",
+      "ct.lede":"Abierto a roles en alianzas de marca, venta de medios y marketing de creadores, especialmente con una dimensión global o multimercado.",
+      "ct.copy":"Copiar correo","ct.email":"Escríbeme","ct.toast":"Correo copiado",
+      "ft.made":"Diseñado y construido como un currículum vivo"
+    },
+    fr:{
+      "nav.profile":"Profil","nav.experience":"Expérience","nav.skills":"Compétences","nav.contact":"Contact",
+      "aria.menu":"Menu","aria.top":"Retour en haut",
+      "hero.eyebrow":"Ventes et expérience client · Miami, FL",
+      "hero.lede":"Je transforme l'attention en revenus : je bâtis des audiences, je signe des comptes et je façonne la manière dont les marques voyagent d'une culture à l'autre.",
+      "hero.cta":"Me contacter","hero.cv":"Télécharger le CV (PDF)","hero.scroll":"Défiler",
+      "ledger.title":"Statistiques · 30 jours","ledger.live":"En direct",
+      "s1l":"Vues cumulées","s1n":"Porté par les tendances","s2l":"Abonnés, compte principal","s2n":"Partis de zéro","s3l":"Portée maximale de campagne","s3n":"Partenariats de marque",
+      "m1":"Partenariats de marque","m2":"Vente média","m3":"Marketing d'influence",
+      "st.followers":"Abonnés engagés","st.langs":"Langues maîtrisées","st.gpa":"Moyenne (GPA) à FIU",
+      "p1":"Au cours des deux dernières années, j'ai bâti <strong>une communauté TikTok de plus de 20K abonnés, partie de zéro</strong>, en collaborant avec des marques sur des campagnes sponsorisées et en m'appuyant sur l'analyse de performance pour orienter ce que je crée, et ce que cela rapporte.",
+      "p2":"En parallèle, j'ai vendu des espaces médias et publicitaires chez Spinnaker Media et de la tech grand public chez Best Buy, <strong>atteignant ou dépassant régulièrement mes objectifs</strong> lors des périodes de forte affluence.",
+      "p3":"Mes études en relations internationales affinent la partie de ce travail qui me tient le plus à cœur : comment les messages circulent entre les cultures, et pourquoi certaines marques voyagent quand d'autres ne le font pas. Je recherche des postes à la croisée des <strong>partenariats de marque, de la vente média et du marketing d'influence</strong>, idéalement avec une dimension internationale ou multimarché.",
+      "pr.langs":"Langues","pr.native":"Langue maternelle","pr.fluent":"Courant","pr.edu":"Formation",
+      "pr.degree":"Licence (B.S.) en relations publiques, publicité et communication appliquée","present":"Aujourd'hui",
+      "j1.role":"Associé en stratégie commerciale",
+      "j1.b1":"Analyse des données de performance commerciale pour identifier tendances, opportunités et leviers de croissance.",
+      "j1.b2":"Collaboration avec les équipes ventes, marketing et opérations pour concevoir des initiatives stratégiques qui ont amélioré le chiffre d'affaires et l'efficacité opérationnelle.",
+      "j2.role":"Stratège réseaux sociaux et contenu","j2.org":"Indépendant · Activité de créateur",
+      "j2.b1":"Pilotage de la stratégie de contenu sur TikTok et Instagram, avec plus de 3,9M de vues cumulées grâce à un montage guidé par les données et à l'anticipation des tendances.",
+      "j2.b2":"Développement de deux chaînes détenues en propre, dont un compte personnel de plus de 22K abonnés, pour un total de plus de 23 000 abonnés engagés.",
+      "j2.b3":"Gestion de bout en bout de la relation client, avec des livraisons dans les délais et des clients qui reviennent.",
+      "j3.role":"Client Solutions Manager · Stagiaire projet","j3.org":"TikTok · À distance",
+      "j3.b1":"Soutien aux chefs de projet et aux équipes Client Solutions dans la coordination des calendriers, des livrables et des opérations quotidiennes.",
+      "j3.b2":"Point de contact des clients : réponse aux demandes, suivi régulier et garantie d'une expérience client positive.",
+      "j3.b3":"Collaboration avec des équipes transverses sur la planification, l'exécution et le respect des délais.",
+      "j4.role":"Associé ventes et marketing",
+      "j4.b1":"Pilotage des ventes en contact direct avec les clients, transformant des prospects en comptes récurrents.",
+      "j4.b2":"Soutien à des campagnes de contenu sur TikTok, Instagram et Reels générant de 20K à 100K vues.",
+      "sk.title":"Compétences et certifications","sk.content":"Contenu et création","sk.sales":"Ventes et clients","sk.tools":"Outils et technique","sk.certs":"Certifications",
+      "c1":"Stratégie de contenu","c2":"Vidéo courte","c3":"Analyse des réseaux sociaux","c4":"Veille des tendances","c5":"Vente consultative","c6":"Vente au détail","c7":"Gestion de la relation client","c8":"Conversion de comptes",
+      "ct.title":"Construisons quelque chose qui <em>voyage.</em>",
+      "ct.lede":"Ouvert aux postes en partenariats de marque, vente média et marketing d'influence, en particulier avec une dimension internationale ou multimarché.",
+      "ct.copy":"Copier l'adresse e-mail","ct.email":"M'écrire","ct.toast":"Adresse copiée",
+      "ft.made":"Conçu et développé comme un CV vivant"
+    }
+  };
+
+  /* capture English from the DOM so it is written once */
+  var nodes=document.querySelectorAll("[data-i18n]"),ariaNodes=document.querySelectorAll("[data-i18n-aria]");
+  I18N.en={};
+  nodes.forEach(function(el){var k=el.getAttribute("data-i18n");if(!(k in I18N.en))I18N.en[k]=el.innerHTML;});
+  ariaNodes.forEach(function(el){I18N.en[el.getAttribute("data-i18n-aria")]=el.getAttribute("aria-label");});
+
+  var lang="en";
+  function setLang(l){
+    if(!I18N[l])l="en";lang=l;var d=I18N[l];
+    nodes.forEach(function(el){var k=el.getAttribute("data-i18n");if(d[k]!=null)el.innerHTML=d[k];});
+    ariaNodes.forEach(function(el){var k=el.getAttribute("data-i18n-aria");if(d[k]!=null)el.setAttribute("aria-label",d[k]);});
+    root.lang=l;
+    document.querySelectorAll("[data-lang]").forEach(function(b){b.setAttribute("aria-pressed",String(b.getAttribute("data-lang")===l));});
+    document.querySelectorAll(".stat .num.done").forEach(function(n){renderNum(n,+n.getAttribute("data-count"));});
+    try{localStorage.setItem("mk-lang",l);}catch(e){}
+  }
+  document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.getAttribute("data-lang"));});});
+  var saved=null;try{saved=localStorage.getItem("mk-lang");}catch(e){}
+  if(!saved){var nl=(navigator.language||"en").slice(0,2);if(I18N[nl])saved=nl;}
+  if(saved&&saved!=="en")setLang(saved);
+
+  /* nav: scrolled state, mobile menu */
+  var nav=document.getElementById("nav"),burger=nav.querySelector(".burger"),toTop=document.getElementById("toTop");
+  burger.addEventListener("click",function(){var o=nav.classList.toggle("open");burger.setAttribute("aria-expanded",String(o));});
+  document.querySelectorAll(".links a").forEach(function(a){a.addEventListener("click",function(){nav.classList.remove("open");burger.setAttribute("aria-expanded","false");});});
+
+  /* scroll: nav state, back-to-top, parallax (rAF throttled) */
+  var par=reduce?[]:Array.prototype.slice.call(document.querySelectorAll("[data-parallax]")),ticking=false;
+  function onScroll(){
+    var y=window.scrollY;
+    nav.classList.toggle("scrolled",y>40);
+    toTop.classList.toggle("show",y>window.innerHeight*.9);
+    par.forEach(function(img){
+      var r=img.parentNode.getBoundingClientRect();
+      if(r.bottom<0||r.top>window.innerHeight)return;
+      img.style.transform="translate3d(0,"+(-r.top*+img.getAttribute("data-parallax")).toFixed(1)+"px,0)";
+    });
+    ticking=false;
+  }
+  window.addEventListener("scroll",function(){if(!ticking){ticking=true;requestAnimationFrame(onScroll);}},{passive:true});
+  onScroll();
+  toTop.addEventListener("click",function(){window.scrollTo({top:0,behavior:reduce?"auto":"smooth"});});
+
+  /* scrollspy */
+  var links={};document.querySelectorAll(".links a").forEach(function(a){links[a.getAttribute("href").slice(1)]=a;});
+  if("IntersectionObserver" in window){
+    var spy=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){Object.keys(links).forEach(function(k){links[k].classList.toggle("active",k===e.target.id);});}});},{rootMargin:"-45% 0px -50% 0px"});
+    ["profile","experience","skills","contact"].forEach(function(id){spy.observe(document.getElementById(id));});
+    var rv=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");rv.unobserve(e.target);}});},{rootMargin:"0px 0px -8% 0px"});
+    document.querySelectorAll(".rv").forEach(function(el){rv.observe(el);});
+  }else{document.querySelectorAll(".rv").forEach(function(el){el.classList.add("in");});}
+
+  /* count-up stats */
+  var SUF={"3.9":"M+","23":"K+"};
+  function renderNum(n,v){
+    var dec=+n.getAttribute("data-dec"),s=v.toFixed(dec);
+    if(lang==="fr")s=s.replace(".",",");
+    var suf=SUF[n.getAttribute("data-count")];
+    n.innerHTML=s+(suf?"<sup>"+suf+"</sup>":"");
+  }
+  function countUp(n){
+    var to=+n.getAttribute("data-count"),t0=null,dur=1600;
+    if(reduce){renderNum(n,to);n.classList.add("done");return;}
+    (function step(t){if(!t0)t0=t;var p=Math.min(1,(t-t0)/dur),e=1-Math.pow(1-p,3);renderNum(n,to*e);if(p<1)requestAnimationFrame(step);else n.classList.add("done");})(performance.now());
+  }
+  var nums=document.querySelectorAll(".stat .num");
+  if("IntersectionObserver" in window){
+    var co=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){countUp(e.target);co.unobserve(e.target);}});},{threshold:.6});
+    nums.forEach(function(n){renderNum(n,0);co.observe(n);});
+  }
+
+  /* ledger rotation */
+  var slides=document.querySelectorAll(".slide"),dots=document.querySelectorAll(".dots i"),si=0;
+  if(!reduce&&slides.length)setInterval(function(){
+    if(document.hidden)return;
+    slides[si].classList.remove("on");dots[si].classList.remove("on");
+    si=(si+1)%slides.length;slides[si].classList.add("on");dots[si].classList.add("on");
+  },3400);
+
+  /* copy email + toast */
+  var toast=document.getElementById("toast"),tt;
+  function showToast(){toast.classList.add("show");clearTimeout(tt);tt=setTimeout(function(){toast.classList.remove("show");},2200);}
+  document.getElementById("copy").addEventListener("click",function(){
+    function fallback(){var ta=document.createElement("textarea");ta.value=EMAIL;ta.setAttribute("readonly","");ta.style.position="fixed";ta.style.opacity="0";document.body.appendChild(ta);ta.select();try{document.execCommand("copy");}catch(e){}document.body.removeChild(ta);showToast();}
+    if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(EMAIL).then(showToast,fallback);}else fallback();
+  });
+
+  /* résumé: print stylesheet renders a clean one-page CV (Save as PDF) */
+  document.getElementById("cv").addEventListener("click",function(){
+    document.querySelectorAll(".rv").forEach(function(el){el.classList.add("in");});
+    window.print();
+  });
+})();
+</script>
+</body>
+</html>
