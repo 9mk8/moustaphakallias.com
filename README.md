@@ -6,6 +6,7 @@ Portfolio site for Moustapha Kallias. Single static page, no build step.
 public/
   index.html          the whole site (HTML, CSS, JS inline)
   favicon.svg
+  assets/moustapha-kallias-resume.pdf   the résumé the download button serves
   assets/img/         hero painting (WebP, 1280 and 2400 wide) and og.jpg share image
 wrangler.jsonc        Cloudflare Workers static-assets config
 ```
@@ -17,7 +18,7 @@ wrangler.jsonc        Cloudflare Workers static-assets config
 - Contact section: a compass whose needle follows the cursor (it sways on its own when idle or on touch), with embers and sea mist behind it.
 - Cards tilt toward the cursor, buttons pull toward it, stat tiles flip to show context, the experience timeline fills in gold as you scroll, and clicking a language in the Profile section switches the site to it.
 - Scrollspy nav, scroll progress bar, count-up stats, rotating analytics card, copy-email button with toast, back-to-top.
-- "Download résumé (PDF)" opens the print dialog; the print stylesheet renders a clean one-page résumé, so choose "Save as PDF".
+- "Download résumé (PDF)" downloads `public/assets/moustapha-kallias-resume.pdf`. To update it, replace that file with the new PDF under the same name. Printing the page (Ctrl+P) still gives a clean one-page layout.
 - Respects `prefers-reduced-motion`.
 
 ## Editing

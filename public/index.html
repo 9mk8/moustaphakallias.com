@@ -405,7 +405,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
       <p class="lede intro" style="--d:1.35s" data-i18n="hero.lede">I turn attention into revenue: building audiences, closing accounts, and shaping how brands travel across cultures.</p>
       <div class="ctas intro" style="--d:1.55s">
         <a class="btn btn-blood" href="#contact" data-i18n="hero.cta">Get in touch</a>
-        <button class="btn btn-gold" type="button" id="cv"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 2v9M4 7l4 4 4-4M2 14h12"/></svg><span data-i18n="hero.cv">Download résumé (PDF)</span></button>
+        <a class="btn btn-gold" id="cv" href="assets/moustapha-kallias-resume.pdf" download="Moustapha-Kallias-Resume.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 2v9M4 7l4 4 4-4M2 14h12"/></svg><span data-i18n="hero.cv">Download résumé (PDF)</span></a>
       </div>
     </div>
     <aside class="ledger intro" style="--d:1.9s" aria-label="Creator analytics">
@@ -433,7 +433,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
       <div class="stat" tabindex="0"><div class="stat-in"><div class="face"><div class="num" data-count="3.9" data-dec="1">3.9<sup>M+</sup></div><div class="cap" data-i18n="s1l">Cumulative views</div></div><div class="face back" data-i18n="sb1">Across TikTok and Instagram</div></div></div>
       <div class="stat" tabindex="0"><div class="stat-in"><div class="face"><div class="num" data-count="23" data-dec="0">23<sup>K+</sup></div><div class="cap" data-i18n="st.followers">Engaged followers</div></div><div class="face back" data-i18n="sb2">Across two owned channels</div></div></div>
       <div class="stat" tabindex="0"><div class="stat-in"><div class="face"><div class="num" data-count="3" data-dec="0">3</div><div class="cap" data-i18n="st.langs">Languages, fluent</div></div><div class="face back" data-i18n="sb3">English, Spanish and French</div></div></div>
-      <div class="stat" tabindex="0"><div class="stat-in"><div class="face"><div class="num" data-count="4.0" data-dec="1">4.0</div><div class="cap" data-i18n="st.gpa">GPA at FIU</div></div><div class="face back">Florida International University</div></div></div>
+      <div class="stat" tabindex="0"><div class="stat-in"><div class="face"><div class="num" data-count="3.8" data-dec="1">3.8</div><div class="cap" data-i18n="st.gpa">GPA at FIU</div></div><div class="face back">Florida International University</div></div></div>
     </div>
     <p class="stat-hint" data-i18n="st.hint">Hover or tap a figure</p>
   </div>
@@ -462,7 +462,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
           <h3 data-i18n="pr.edu">Education</h3>
           <b>Florida International University</b>
           <p><span data-i18n="pr.degree">B.S. Public Relations, Advertising &amp; Applied Communication</span><br>College of Communication, Architecture + The Arts<br>2025 – <span data-i18n="present">Present</span></p>
-          <span class="gpa">GPA 4.0</span>
+          <span class="gpa">GPA 3.8</span>
         </div>
       </div>
     </div>
@@ -870,11 +870,6 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
     if(!reduce&&"IntersectionObserver" in window)new IntersectionObserver(function(es){cIn=es[0].isIntersecting;if(cIn&&!nraf)nraf=requestAnimationFrame(nTick);}).observe(cmp);
   }
 
-  /* résumé: print stylesheet renders a clean one-page CV (Save as PDF) */
-  document.getElementById("cv").addEventListener("click",function(){
-    document.querySelectorAll(".rv").forEach(function(el){el.classList.add("in");});
-    window.print();
-  });
 })();
 </script>
 </body>
